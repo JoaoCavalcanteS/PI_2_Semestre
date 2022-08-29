@@ -1,0 +1,63 @@
+* {
+    padding: 0%;
+    margin: 0%;
+    font-size: 110%;
+}
+
+body {
+   background-image: url(https://static.vecteezy.com/ti/fotos-gratis/p2/1421733-o-ceu-nuvens-e-estrelas-a-noite-gr%C3%A1tis-foto.jpg);
+  
+}
+
+.imagem {
+    border-radius: 600px;
+    width: 100px;
+}
+.acesso2,.acesso1 {
+    padding-top: 20px;
+}
+
+.contatos {
+   text-align: center;
+    
+}
+.cabecalho {
+    height: 100%;
+    background-color: rgba(25, 25, 26, 0);
+}
+.nav {
+    background-color: rgba(247, 245, 245, 0); 
+    margin-top: 1%;
+    margin-right: 5px;    
+}
+.desce {    
+    margin-top: 25%;    
+}
+.textfin1{
+    text-decoration: none;
+    padding-top: 50px;
+    position: relative;
+}
+
+.login {
+    width: 45%;
+    padding-top: 5%;
+    margin-left: 27%;
+}
+.inscreva {
+   
+    width: 45%;
+    margin-top: 3%;
+    margin-left: 27%;
+}
+.senha,.log{
+    background-color: rgba(74, 73, 73, 0);
+    color: aliceblue;
+}
+footer {
+    margin-top: 12%;
+    background-color: rgba(240, 248, 255, 0.044);
+}
+.grup {
+    text-decoration: none;
+}
