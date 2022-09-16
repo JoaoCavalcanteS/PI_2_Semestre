@@ -12,6 +12,11 @@
     <br>
 <?php
 //Dados para conexao ao MySQL
+/*$mysqlhostname= "10.135.0.53";
+$mysqlport="3306";
+$mysqlusername="aluno";
+$mysqlpassword="aluno";
+$mysqldatabase="10.135.0.53/sqledutsi";*/
 $mysqlhostname= "144.22.231.213";
 $mysqlport="3306";
 $mysqlusername="usuarios";
