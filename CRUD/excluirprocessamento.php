@@ -9,11 +9,11 @@
             <br>
 
 <?php            
-$mysqlhostname= "144.22.231.213";
+$mysqlhostname= "10.135.0.53";
 $mysqlport="3306";
-$mysqlusername="usuarios";
-$mysqlpassword="Senac@1976";
-$mysqldatabase="meubanco";
+$mysqlusername="aluno";
+$mysqlpassword="aluno";
+$mysqldatabase="10.135.0.53/sqledutsi";
 
 //mostra string de conexao ao MySql
 $dsn='mysql:host=' . $mysqlhostname . ";dbname=" . $mysqldatabase . ';port=' . $mysqlport;
