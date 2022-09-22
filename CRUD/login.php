@@ -14,7 +14,7 @@
         <input type="email" name="email" id="Email">
         <p>Senha:</p>
         <input type="password" name="senha" id="Senha">
-        <input type="button" value="Logar">
+        <input type="submit" value="Logar">
     </div>
     </form>
 </body>
