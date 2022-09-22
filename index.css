@@ -1,0 +1,39 @@
+body {
+    background-color: black;
+}
+header {
+    display: flex;
+    box-shadow: 0 0 2rem red;
+    border: 1px solid red;
+    border-bottom: 10px solid red;
+    background-color: black;
+    justify-content: space-between;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: large;
+  }
+
+nav {
+    color: white;
+}
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 4%;
+    max-width: 150px;
+    max-height: 150px;
+    width: auto;
+    height: auto;
+}
+ul {
+    position: relative;
+    left: 8%;
+    display: flex;
+    margin: 60px;
+  }
+li{
+    display: inline;
+    list-style-type: none;
+    padding-left: 5em;
+    text-align: center;
+}
