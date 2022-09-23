@@ -31,10 +31,13 @@ $admin= $pdo->query("SELECT * FROM ADMINISTRADOR WHERE ADM_EMAIL='" . $email . "
 
 //Se a retorna for vazio (0), então a senha ou email estão incorretos
 if(count($admin)==0){
-    echo "Usuário ou senha invalidos";
+    
+    echo "Usuario Invalido!";
+    header("Location: login.php?mensagem=Invalido");
 }
 else{
-    echo "Usuário autenticado";
+    echo "Usuario valido!";
+    header("Location: login.php?mensagem=VALIDADO");
 }
 
 ?>
