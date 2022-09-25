@@ -56,7 +56,7 @@
             </thead>
         <tr>
     <?php
-        foreach ($admins as $val) {
+        foreach ($admins as $val){
             echo "<tr>";
             echo "<td>{$val("ADM_ID")}</td>";
             echo "<td>{$val("ADM_NOME")}</td>";                    
