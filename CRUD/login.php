@@ -10,19 +10,7 @@
     <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body>
-<<<<<<< Updated upstream
-    <h1>Bravo 4 Fun</h1>
-    <form action="autenticacao.php" method="post">
-    <div class="BoxLog">Login<p>Email:</p>
-        <input type="email" name="email" id="Email">
-        <p>Senha:</p>
-        <input type="password" name="senha" id="Senha">
-        <input type="submit" value="Logar">
-    </div>
-    </form>
-</body>
-=======
-        <header>
+    <header>
         <nav>
             <ul class="nav justify-content nav">
                 <li class="nav-item">

@@ -19,6 +19,6 @@
             <input type="submit" value="Enviar"> 
         </Form>     
         <br>
-        <a href="listaradmins.php">Voltar para a Pagina de Lista</a>    
+        <a href="CRUD/listaradmins.php">Voltar para a Pagina de Lista</a>    
     </body>
     </html>       

@@ -20,15 +20,15 @@
     <body>
         <h1>Listar os Administradores</h1>
         <br>
-<<<<<<< Updated upstream
+<!-- <<<<<<< Updated upstream -->
 <?php
 $mysqlhostname= "144.22.244.104";
 $mysqlport="3306";
 $mysqlusername="Bravo4Fun";
 $mysqlpassword="Bravo4Fun";
 $mysqldatabase="Bravo4Fun";
-=======
->>>>>>> Stashed changes
+?>
+<!-- //>>>>>>> Stashed changes -->
 
         <table border="1">
             <tr>
@@ -36,22 +36,22 @@ $mysqldatabase="Bravo4Fun";
                 <th>Nome</th>
                 <th>Email</th>
                 <th>Senha</th>
-                <th>Atualizacao</th>
-                <th>Exclusao</th>            
+                <th>Atualização</th>
+                <th>Exclusão</th>            
             </tr>
         <tr>
     <?php
-        foreach ($admins as $linha) {
+        foreach ($admins as $val) {
             echo "<tr>";
-            echo "<td>{$linha("ADM_ID")}</td>";
-            echo "<td>{$linha("ADM_NOME")}</td>";                    
-            echo "<td>{$linha("ADM_EMAIL")}</td>";           
-            echo "<td>{$linha("ADM_SENHA")}</td>/";
-            echo "<td><a href=\"atualizarform.php?id={$linha("ADM_ID")}\"> Atualizar</a></td>";           
-            echo "<td><a href=\"excluirform.php?id={$linha("ADM_ID")}\">Excluir</a></td>";
+            echo "<td>{$val("ADM_ID")}</td>";
+            echo "<td>{$val("ADM_NOME")}</td>";                    
+            echo "<td>{$val("ADM_EMAIL")}</td>";           
+            echo "<td>{$val("ADM_SENHA")}</td>/";
+            echo "<td><a href=\"atualizarform.php?id={$val("ADM_ID")}\"> Atualizar</a></td>";           
+            echo "<td><a href=\"excluirform.php?id={$val("ADM_ID")}\">Excluir</a></td>";
             echo"</tr>";
         }
-        ?>
+    ?>
         </table>
         <br>
         <a href="CRUD/index.html">Voltar para o Indice</a>    
