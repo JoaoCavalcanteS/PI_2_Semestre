@@ -3,6 +3,9 @@ body{
     text-align: center;
     font-size: large;
 }
+a:link{
+    color:white;
+}
 h1{
     color: rgb(255, 255, 255);
 }
