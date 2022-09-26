@@ -28,8 +28,8 @@
                 </div>
                 <br>
                 <button type="submit" value="Enviar" class="btn btn-outline-danger">Enviar</button>
+                <a href="login.php"><button type="button" class="btn btn-outline-warning">voltar para a tela de login</button></a>    
         </Form>     
         <br>
-        <a href="login.php">Voltar para login</a>    
     </body>
     </html>       
