@@ -11,12 +11,7 @@
 </head>
 <body>
     <header>
-        <nav>
-            <ul class="nav justify-content nav">
-                <li class="nav-item">
-                    <img src="logoBravo.png" alt="LogoMarca" class="imagem">
-                </li>
-                <li class="nav-item">
+        <img src="logoBravo.png" alt="LogoMarca" class="logo">
                 <!-- <a class="nav-link active" aria-current="page" href="#">
                     <button type="button" class="btn btn-outline-primary desce">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
@@ -42,30 +37,51 @@
                             </svg> Whatsapp
                         </button>                
                     </a> -->
-                </li>
-            </ul>
-        </nav>
         </header>
-        <section>
+        <section class= "inscreva-se">
+            <h1> Login </h1>
             <form action="autenticacao.php" method="post">
                 <div class="login">
                     <div class="input-group mb-3 acesso1">
                         <span class="input-group-text log" id="addon-wrapping">Login:</span>
                         <input type="text" name="email" class="form-control log" placeholder="exemplo_2233" aria-label="Recipient's username" aria-describedby="basic-addon2">
                     </div>
-
+                    <hr>
                     <div class="input-group flex-nowrap acesso2" >
                             <span class="input-group-text senha" id="addon-wrapping">Senha:</span>
                             <input type="password" class="form-control senha " placeholder="*****" aria-label="Senha" aria-describedby="addon-wrapping" name= "senha">
-                        <button type="submit" class="btn btn-secondary senha" id="basic-addon2" value= "logar" >Entrar</button>
-                    </div>                
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-outline-success senha" id="basic-addon2" value= "logar" >Entrar</button>  
                 </div> 
-            </form>                   
-            <div class="d-grid gap-2 inscreva">                
-                <span class="verification"><strong>Ainda não é cadastrado?</strong></span>
-                <button class="btn btn-outline-primary" type="button"><strong><a href="criarform.php" target="_blank">CADASTRE-SE</a></strong></button>
+            </form>
+</section>
+<section class="cadastre-se"> 
+            <div class="d-grid gap-2 inscreva"> 
+            <h1> Cadastro </h1>               
+            <Form class="cad" Action="criarprocessamento.php" method="POST">
+                <br>
+                
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Nome : </span>
+                    <input type="text" class="form-control" name="nome" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                </div>
+                <hr>               
+                <br>
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Email :</span>
+                    <input type="text" class="form-control" name="email" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                </div>
+                <hr>
+                <br>
+                <div class="input-group input-group-sm mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Senha : </span>
+                    <input type="password" class="form-control" name="senha" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                </div>
+                <br>
+                <button type="submit" value="Enviar" class="btn btn-outline-danger">Cadastre-se</button>    
+        </Form> 
               </div>
-        </section>            
+        </section>
     </body>
-    <script src="listar.js"></script>
 </html>
