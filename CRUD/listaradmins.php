@@ -34,6 +34,7 @@
 
     ?>
         <table border="1" class="table">
+<<<<<<< HEAD
                 <thead>
                     <tr>
                         <th scope="col">Id</th>
@@ -59,6 +60,32 @@
                 }
                 
             ?>
+=======
+            <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Email</th>
+                <th scope="col">Senha</th>
+                <th scope="col">Atualização</th>
+                <th scope="col">Exclusão</th>            
+            </tr>
+            </thead>
+        <tr>
+    <?php
+        foreach ($admins as $val){
+            echo "<tr>";
+            echo "<td>{$val("ADM_ID")}</td>";
+            echo "<td>{$val("ADM_NOME")}</td>";                    
+            echo "<td>{$val("ADM_EMAIL")}</td>";           
+            echo "<td>{$val("ADM_SENHA")}</td>/";
+            echo "<td>{$val("ADM_SENHA")}</td>/";
+            echo "<td><a href=\"atualizarform.php?id={$val("ADM_ID")}\"> Atualizar</a></td>";           
+            echo "<td><a href=\"excluirform.php?id={$val("ADM_ID")}\">Excluir</a></td>";
+            echo"</tr>";
+        }
+    ?>
+>>>>>>> 7f62c319f53ca75907d6e3c5ca5f24f79582ced4
         </table>
         <br>
         <a href="login.php"><button type="button" class="btn btn-danger">Sair</button></a>    
