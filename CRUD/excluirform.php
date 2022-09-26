@@ -29,18 +29,18 @@
         $nome= $admin["ADM_NOME"];
         $email= $admin["ADM_EMAIL"];
         ?>
-                    <Form Action="excluirprocessamento.php" method="POST">
-                        <input type="hidden" class="form-control" name="id" value="<?php echo $id ?>">
-                        <br>
-                        <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1">Nome:</span>
-                        <input type="hidden" class="form-control" name="nome" value="<?php echo $nome ?>">
-                        </div>                
-                        Email : 
-                        <input type="text" name="email" value="<?php echo $email ?>">
-                        <br>
-                        <input type="submit" value="Enviar"> 
-                    </Form>
+            <Form Action="excluirprocessamento.php" method="POST">
+                <input type="hidden" class="form-control" name="id" value="<?php echo $id ?>">
+                <br>
+                <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Nome:</span>
+                <input type="hidden" class="form-control" name="nome" value="<?php echo $nome ?>">
+                </div>                
+                Email : 
+                <input type="text" name="email" value="<?php echo $email ?>">
+                <br>
+                <input type="submit" value="Enviar"> 
+            </Form>
     </body>
 </html>        
 	
