@@ -10,22 +10,7 @@
     </head>
     <body>
         <h1>Bravo 4 Fun</h1>          
-            <div class="input-group input-group-sm mb-3">
-                    <span class="input-group-text" id="inputGroup-sizing-sm">Nome : </span>
-                    <input type="text" class="form-control" name="nome" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
-                </div>               
-                <br>
-                <div class="input-group input-group-sm mb-3">
-                    <span class="input-group-text" id="inputGroup-sizing-sm">Email :</span>
-                    <input type="text" class="form-control" name="email" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
-                </div>
-                <br>
-                <div class="input-group input-group-sm mb-3">
-                    <span class="input-group-text" id="inputGroup-sizing-sm">Senha : </span>
-                    <input type="password" class="form-control" name="senha" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
-                </div>
-            </div>     
-            <input type="submit" value="Atualizar"> 
+
                
             <?php
                 
@@ -41,15 +26,15 @@
                 $pdo= new PDO($dsn, $mysqlusername, $mysqlpassword);
 
                 //Captura os valores das variaveis
-                $nome= "nome";
-                $email= "email";
-                $senha= "senha";
+                $nome= $_POST["nome"];
+                $email= $_POST["email"];
+                $senha= $_POST["senha"];
 
                 // requisição do cliente!
-                $id = $_GET["id"];
+                $id = $_POST["id"];
 
                 //Monta o comando de update!
-                $cmdtext= "UPDATE ADMINISTRADOR set ADM_NOME = $nome, ADM_EMAIL = $email, ADM_SENHA = $senha where ADM_ID= . $id";
+                $cmdtext= "UPDATE ADMINISTRADOR set ADM_NOME = '$nome', ADM_EMAIL = '$email', ADM_SENHA = '$senha' where ADM_ID=  $id";
                 $cmd = $pdo->prepare($cmdtext);
 
                 //Executa o comando e verifica se teve sucesso
@@ -63,6 +48,7 @@
                 }     
                 
             ?>
+            
         
     </body>
 </html>

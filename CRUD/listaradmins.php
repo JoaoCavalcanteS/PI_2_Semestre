@@ -33,35 +33,52 @@
         $admins = $cmd->fetch(PDO::FETCH_NUM);
 
     ?>
-        <table border="1" class="table">
 
-                <thead>
-                    <tr>
-                        <th scope="col">Id</th>
-                        <th scope="col">Nome</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Senha</th>
-                        <th scope="col">Atualização</th>
-                        <th scope="col">Exclusão</th>            
-                    </tr>
-                </thead>
-            
+    <table border="1" class=table>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Senha</th>
+            <th>Atualizacao</th>
+            <th>Exclusao</th>            
+        </tr>
+<?php
+
+while($linha = $cmd->fetch()) {
+?>
+    <tr>
+        <td>
+            <?php 
+                echo $linha["ADM_ID"];
+            ?>
+        </td>
+        <td>
             <?php
-
-                foreach($admins as $i) {
-                    echo "<tr>";
-                    echo "<td>{$admins['0']}</td>";
-                    echo "<td>{$admins['1']}</td>";                    
-                    echo "<td>{$admins['2']}</td>";           
-                    echo "<td>{$admins['3']}</td>/";            
-                    echo "<td><a href=\"atualizarform.php ?id={$admins['0']}\">Atualizar</a></td>";           
-                    echo "<td><a href=\"excluirform.php ?id={$admins['0']}\">Excluir</a></td>";
-                    echo"</tr>";      
-                }
-                
-            ?>            
-
-        </table>
+                echo $linha["ADM_NOME"];
+            ?>
+        </td>
+        <td>
+            <?php
+                echo $linha["ADM_EMAIL"];
+            ?>
+        </td>    
+        <td>
+            <?php
+                echo $linha["ADM_SENHA"];
+            ?>
+        </td>    
+        <td>
+            <a href="atualizaradmin.php?id=<?php echo $linha["ADM_ID"] ?>">Atualizar</a>
+        </td>
+        <td>
+            <a href="excluirform.php?id=<?php echo $linha["ADM_ID"] ?>">Excluir</a>
+        </td>        
+    </tr>
+<?php
+    } 
+?>
+    </table>
         
         <a href="login.php"><button type="button" class="btn btn-danger">Sair</button></a>    
         <a href="atualizarform.php"><button type="button" class="btn btn-primary">Ad Administradores</button></a>    

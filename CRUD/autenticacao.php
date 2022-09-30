@@ -9,6 +9,7 @@
 <body>
     <br>
     <h1>login ou senha invalida !</h1>
+    <a href="login.php">Voltar para a página de Login</a>
     <br>
 <?php
 //Dados para conexao ao MySQL
