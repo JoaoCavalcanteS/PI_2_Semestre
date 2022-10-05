@@ -33,13 +33,13 @@
                 <input type="hidden" class="form-control" name="id" value="<?php echo $id ?>">
                 <br>
                 <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1">Nome:</span>
+                <span class="input-group-text" id="basic-addon1">Nome: <?php echo $nome?></span>
                 <input type="hidden" class="form-control" name="nome" value="<?php echo $nome ?>">
                 </div>                
                 Email : 
                 <input type="text" name="email" value="<?php echo $email ?>">
                 <br>
-                <input type="submit" value="Enviar"> 
+                <input type="submit" value="Excluir"> 
             </Form>
     </body>
 </html>        
