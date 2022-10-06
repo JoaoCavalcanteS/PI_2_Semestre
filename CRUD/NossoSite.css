@@ -1,5 +1,6 @@
 body {
     background-color: black;
+
 }
 
 section {
@@ -21,6 +22,7 @@ section {
     position: absolute;
     top: 300px;
     width: 600px;
+    left: 30%;
     box-shadow: 0 0 2rem red;
     padding: 150px;
     border: 1px solid red;
