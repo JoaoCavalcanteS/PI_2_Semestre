@@ -81,6 +81,6 @@ while($linha = $cmd->fetch()) {
     </table>
         
         <a href="login.php"><button type="button" class="btn btn-danger">Sair</button></a>    
-        <a href="atualizarform.php"><button type="button" class="btn btn-primary">Ad Administradores</button></a>    
+        <a href="cadastroAdm.php"><button type="button" class="btn btn-primary">Ad Administradores</button></a>    
     </body>
     </html>

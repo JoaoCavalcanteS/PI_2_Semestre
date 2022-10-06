@@ -7,11 +7,11 @@
     <title>Processamento de Criacao de Administrador</title>
 </head>
  <body>
-    <h1>Processamento de Criacao de Administrador</h1>
+    <h1>Novo adm cadastrado</h1>
     <br>
-        mensagem usuario
+        Retorne para a lista de administradores
     <br>
-    <a href="listaradmins.php">Voltar para a Pagina de Lista</a>
+    <a href="listaradmins.php">Voltar para a Lista</a>
  </body>
 </html> 
 <?php
