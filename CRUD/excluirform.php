@@ -29,7 +29,7 @@
         $nome= $admin["ADM_NOME"];
         $email= $admin["ADM_EMAIL"];
         ?>
-            <Form Action="excluirprocessamento.php" method="POST">
+            <Form Action="excluirprocessamento.php?id=<?php echo $id ?>" method="POST">
                 <input type="hidden" class="form-control" name="id" value="<?php echo $id ?>">
                 <br>
                 <div class="input-group mb-3">

@@ -44,12 +44,12 @@
                 <div class="login">
                     <div class="input-group mb-3 acesso1">
                         <span class="input-group-text log" id="addon-wrapping">Login:</span>
-                        <input type="text" name="email" class="form-control log" placeholder="exemplo_2233" aria-label="Recipient's username" aria-describedby="basic-addon2">
+    /s                    <input required type="text" name="email" class="form-control log" placeholder="exemplo_2233" aria-label="Recipient's username" aria-describedby="basic-addon2">
                     </div>
                     <hr>
                     <div class="input-group flex-nowrap acesso2" >
                             <span class="input-group-text senha" id="addon-wrapping">Senha:</span>
-                            <input type="password" class="form-control senha " placeholder="*****" aria-label="Senha" aria-describedby="addon-wrapping" name= "senha">
+                            <input required type="password" class="form-control senha " placeholder="*****" aria-label="Senha" aria-describedby="addon-wrapping" name= "senha">
                     </div>
                     <br>
                     <button type="submit" class="btn btn-outline-success senha" id="basic-addon2" value= "logar" >Entrar</button>  

@@ -28,7 +28,7 @@
         $dsn='mysql:host=' . $mysqlhostname . ";dbname=" . $mysqldatabase . ';port=' . $mysqlport;
         $pdo= new PDO($dsn, $mysqlusername, $mysqlpassword);
 
-        $cmd= $pdo->query("SELECT * FROM ADMINISTRADOR");   
+        $cmd= $pdo->query("SELECT * FROM ADMINISTRADOR WHERE ADM_ATIVO=1");   
         
         $admins = $cmd->fetch(PDO::FETCH_NUM);
 

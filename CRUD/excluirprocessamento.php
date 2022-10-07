@@ -27,7 +27,7 @@
             //Realiza uma Query SQL para buscar o administrador que tenha o email e a senha passado pelo usuario
 
             //mostra o comand de inserção
-            $cmdtext= "DELETE  FROM ADMINISTRADOR WHERE ADM_ID=" . $id;
+            $cmdtext= "UPDATE ADMINISTRADOR SET ADM_ATIVO=0 WHERE ADM_ID=" . $id;
             $cmd = $pdo->prepare($cmdtext);
 
             //executa o comando e verifica se teve sucesso
