@@ -1,0 +1,123 @@
+body {
+    background-color: black;
+
+}
+
+section {
+    color: #126E82;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: bold;
+}
+.logo {
+    position: relative;
+    left: 40%;
+    max-width: 300px;
+    max-height: 300px;
+    width: auto;
+    height: auto;
+}
+
+
+.inscreva-se {
+    position: absolute;
+    top: 300px;
+    width: 600px;
+    left: 30%;
+    box-shadow: 0 0 2rem red;
+    padding: 150px;
+    border: 1px solid red;
+    border-bottom: 10px solid red;
+    background-color: black;
+}
+.cadastre-se {
+    position: absolute;
+    top: 300px;
+    right: 0px;
+    display: flex;
+    width: 600px;
+    box-shadow: 0 0 2rem red;
+    padding: 80px;
+    border: 1px solid red;
+    border-bottom: 10px solid red;
+    background-color: black;
+}
+
+
+hr {
+    color: red;
+}
+button {
+    position: absolute;
+    left: 250px;
+}
+h1 {
+    position: absolute;
+    top:40px;
+    left: 250px;
+    text-shadow: 0 0 2rem #126E82;
+}
+
+/*
+* {
+    padding: 0%;
+    margin: 0%;
+    font-size: 110%;
+}
+
+body {
+    background-color: rgba(4, 4, 4, 0.415);
+}
+
+.imagem {
+    border-radius: 600px;
+    width: 100px;
+}
+.acesso2,.acesso1 {
+    padding-top: 20px;
+}
+
+.contatos,.verification {
+   text-align: center;
+    
+}
+.cabecalho {
+    height: 100%;
+    background-color: rgba(25, 25, 26, 0);
+}
+.nav {
+    background-color: rgba(247, 245, 245, 0); 
+    margin-top: 1%;
+    margin-right: 5px;    
+}
+.desce {    
+    margin-top: 25%;    
+}
+.textfin1{
+    text-decoration: none;
+    padding-top: 50px;
+    position: relative;
+}
+
+.login {
+    width: 45%;
+    padding-top: 5%;
+    margin-left: 27%;
+}
+.inscreva {
+   
+    width: 45%;
+    margin-top: 3%;
+    margin-left: 27%;
+}
+.senha,.log{
+    background-color: rgba(74, 73, 73, 0);
+    color: aliceblue;
+}
+footer {
+    margin-top: 12%;
+    background-color: rgba(240, 248, 255, 0.044);
+}
+.grup {
+    text-decoration: none;
+}
+*/
