@@ -19,7 +19,7 @@
         <h1>Lista das categorias</h1>
         <span>
             <a href="../CRUD/listarAdmins.php"><button type="button" class="btn btn-danger">Voltar</button></a>    
-            <a href="cadastroAdm.php"><button type="button" class="btn btn-primary">Adicionar Categorias</button></a>
+            <a href="cadastrarCategoria.php"><button type="button" class="btn btn-primary">Adicionar Categorias</button></a>
         </span>
     <?php
         $mysqlhostname= "144.22.244.104";

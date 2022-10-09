@@ -26,15 +26,15 @@
                 $pdo= new PDO($dsn, $mysqlusername, $mysqlpassword);
 
                 //Captura os valores das variaveis
-                $nomeId= $_POST["CATEGORIA_ID"];
-                $nome= $_POST["CATEGORIA_NOME"];
-                $desc= $_POST["CATEGORIA_DESC"];
+                $nomeId= $_POST["nomeId"];
+                $categoria=$_POST["categoria"];
+                $desc=$_POST["descricao"];
 
                 // requisição do cliente!
-                $id = $_POST["id"];
+                $id = $_POST["nomeId"];
 
                 //Monta o comando de update!
-                $cmdtext= "UPDATE CATEGORIA set CATEGORIA_NOME = '$nome', CATEGORIA_DESC = '$desc' where CATEGORIA_ID=  $nomeid";
+                $cmdtext= "UPDATE CATEGORIA set CATEGORIA_NOME = '$categoria', CATEGORIA_DESC = '$desc' where CATEGORIA_ID=  $id";
                 $cmd = $pdo->prepare($cmdtext);
 
                 //Executa o comando e verifica se teve sucesso
@@ -44,7 +44,7 @@
                 }
                 else
                 {
-                    echo "<script>Alert('Adm criado com sucesso')</script>";
+                    echo "<script>Alert('Erro')</script>";
                 }     
                 
             ?>

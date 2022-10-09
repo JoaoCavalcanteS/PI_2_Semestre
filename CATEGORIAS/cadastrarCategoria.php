@@ -1,4 +1,3 @@
-
 <section class="cadastre-se"> 
         <div class="d-grid gap-2 inscreva"> 
             <h1> Cadastro </h1>               

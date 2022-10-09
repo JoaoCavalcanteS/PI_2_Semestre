@@ -44,7 +44,7 @@
                 }
                 else
                 {
-                    echo "<script>Alert('Adm criado com sucesso')</script>";
+                    echo "<script>Alert('Erro')</script>";
                 }     
                 
             ?>
