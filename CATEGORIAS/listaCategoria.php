@@ -32,7 +32,7 @@
         $dsn='mysql:host=' . $mysqlhostname . ";dbname=" . $mysqldatabase . ';port=' . $mysqlport;
         $pdo= new PDO($dsn, $mysqlusername, $mysqlpassword);
 
-        $cmd= $pdo->query("SELECT * FROM CATEGORIA WHERE CATEGORIA_ATIVO=1");   
+        $cmd= $pdo->query("SELECT * FROM CATEGORIA WHERE COALESCE(CATEGORIA_ATIVO,1)=1");   
         
         $admins = $cmd->fetch(PDO::FETCH_NUM);
 

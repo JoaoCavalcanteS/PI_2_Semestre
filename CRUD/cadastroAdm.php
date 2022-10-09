@@ -1,7 +1,7 @@
 
 <section class="cadastre-se"> 
         <div class="d-grid gap-2 inscreva"> 
-            <h1> Cadastro </h1>               
+            <h1> Cadastrar novo administrador </h1>               
             <Form class="cad" Action="criarprocessamento.php" method="POST">
                 <br>
                 <div class="input-group input-group-sm mb-3">
