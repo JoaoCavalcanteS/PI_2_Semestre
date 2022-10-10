@@ -1,0 +1,15 @@
+body {
+    background-color: rgb(0, 0, 0);
+}
+
+.imagem {
+    border-radius: 600px;
+    width: 100px;
+}
+.table{
+    position: relative;
+    box-sizing: border-box;
+    box-shadow:5px 5px 10px rgba(0, 0, 0, 0.699);
+    margin: 10px 10px 10px 0px;
+    color: rgb(255, 255, 255);
+}
