@@ -1,12 +1,11 @@
-    <html>        
+<html>        
     <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <title>Listar-Admins</title>
-</head>
+    <link rel="stylesheet" href="ListadeAdmin.css">
+        <title>PRODUTOS</title>
+    </head>
     <style>
+        <style>
         body {
     background-color: rgb(0, 0, 0);
     margin: 0;
@@ -72,9 +71,10 @@ nav .conteudo .links{
 }
 
     </style>
+    </style>
     <body>
         <header>
-        <div class="menu">
+                <div class="menu">
     <nav>
         <div class="conteudo">
         <div class="logo"> <img src="../Imagens/logobravo.png" alt="LogoMarca" class="logo"></div>
@@ -89,7 +89,6 @@ nav .conteudo .links{
         </div>
             </nav>
         </header>
-        
     <?php
         $mysqlhostname= "144.22.244.104";
         $mysqlport="3306";
@@ -101,20 +100,21 @@ nav .conteudo .links{
         $dsn='mysql:host=' . $mysqlhostname . ";dbname=" . $mysqldatabase . ';port=' . $mysqlport;
         $pdo= new PDO($dsn, $mysqlusername, $mysqlpassword);
 
-        $cmd= $pdo->query("SELECT * FROM ADMINISTRADOR WHERE COALESCE(ADM_ATIVO,1)=1");   
+        $cmd= $pdo->query("SELECT * FROM PRODUTO WHERE PRODUTO_ATIVO=1");   
         
-        $admins = $cmd->fetch(PDO::FETCH_NUM);
+        $produto = $cmd->fetch(PDO::FETCH_NUM);
 
     ?>
 
     <table border="1" class=table>
         <tr>
-            <th>Id</th>
-            <th>Nome</th>
-            <th>Email</th>
-            <th>Senha</th>
+            <th>Indentificador</th>
+            <th>categoria</th>
+            <th>Discrição</th>
+            <th>Preço</th>
+            <th>Desconto</th>
             <th>Atualizacao</th>
-            <th>Exclusao</th>            
+            <th>Ocutar</th>            
         </tr>
 <?php
 
@@ -123,35 +123,41 @@ while($linha = $cmd->fetch()) {
     <tr>
         <td>
             <?php 
-                echo $linha["ADM_ID"];
+                echo $linha["PRODUTO_ID"];
             ?>
         </td>
         <td>
             <?php
-                echo $linha["ADM_NOME"];
+                echo $linha["PRODUTO_NOME"];
             ?>
         </td>
         <td>
             <?php
-                echo $linha["ADM_EMAIL"];
+                echo $linha["PRODUTO_DESC"];
             ?>
         </td>    
         <td>
             <?php
-                echo $linha["ADM_SENHA"];
+                echo $linha["PRODUTO_PRECO"];
             ?>
         </td>    
         <td>
-            <a href="atualizaradmin.php?id=<?php echo $linha["ADM_ID"] ?>">Atualizar</a>
+            <?php
+                echo $linha["PRODUTO_DESCONTO"];
+            ?>
+        </td>   
+        <td>
+            <a href="atualizarPRODUTO.php?id=<?php echo $linha["PRODUTO_ID"] ?>">Atualizar</a>
         </td>
         <td>
-            <a href="excluirform.php?id=<?php echo $linha["ADM_ID"] ?>">Excluir</a>
+            <a href="excluirform.php?id=<?php echo $linha["PRODUTO_ID"] ?>">Ocutar</a>
         </td>        
     </tr>
 <?php
     } 
 ?>
     </table>
-
+        
+            
     </body>
     </html>

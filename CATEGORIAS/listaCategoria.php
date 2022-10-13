@@ -4,23 +4,83 @@
     <link rel="stylesheet" href="../CRUD/ListadeAdmin.css">
         <title>Lista das categorias</title>
     </head>
+    <style>
+      
+
+.table{
+    position: absolute;
+    top: 10%;
+    box-sizing: border-box;
+    box-shadow:5px 5px 10px rgba(0, 0, 0, 0.699);
+    margin: 10px 10px 10px 0px;
+    color: rgb(255, 255, 255);
+}
+.menu{
+    background: black;
+    position: absolute;
+    width: 100%;
+    box-shadow: 0 0 2rem red;
+      border: 1px solid red;
+      border-bottom: 10px solid red;
+}
+
+.menu nav{
+    position: relative;
+    display: flex;
+    max-width: calc(100% - 200px);
+    margin: 0 auto;
+    height: 70px;
+    align-items: center;
+    justify-content: space-between;
+}
+nav .conteudo{
+    display: flex;
+    align-items: center;
+}
+nav .conteudo .links{
+    margin-left: 80px;
+    display: flex;
+}
+.conteudo .logo {
+    max-width: 100px;
+    max-height: 100px;
+    width: auto;
+    height: auto;
+}
+.conteudo .links li{
+    list-style: none;
+}
+.conteudo .links li a{
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 7px 17px;
+    border-radius: 5px;
+}
+.conteudo .links li:hover a{
+    background: red;
+    transition: .3s;
+}
+
+    </style>
     <body>
-        <header>
-            <nav>
-                <ul class="nav justify-content nav">
-                    <li class="nav-item">
-                    <img src="../Imagens/logoBravo.png" alt="LogoMarca" class="imagem">
-                    </li>
-                    <li class="nav-item">
-                    </li>
-                </ul>
+    <header>
+        <div class="menu">
+    <nav>
+        <div class="conteudo">
+        <div class="logo"> <img src="../Imagens/logobravo.png" alt="LogoMarca" class="logo"></div>
+        <ul class="links">
+        <li><a href="../CRUD/login.php">Login</a></li>
+        <li><a href="../CRUD/CadastroAdm.php">Cadastro</a></li>
+        <li><a href="../CRUD/cadastroDeProdutos.php">Cadastro de Produtos</a></li>
+            <li><a href="../CRUD/listaradmins.php">Lista ADM</a></li>
+            <li><a href="../CATEGORIAS/listaCategoria.php">Categoria</a></li>
+            <li><a href="../CRUD/listaProdutos.php">Produtos</a></li>
+        </ul>
+        </div>
             </nav>
         </header>
-        <h1>Lista das categorias</h1>
-        <span>
-            <a href="../CRUD/listarAdmins.php"><button type="button" class="btn btn-danger">Voltar</button></a>    
-            <a href="cadastrarCategoria.php"><button type="button" class="btn btn-primary">Adicionar Categorias</button></a>
-        </span>
+        
     <?php
         $mysqlhostname= "144.22.244.104";
         $mysqlport="3306";
