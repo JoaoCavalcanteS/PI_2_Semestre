@@ -20,7 +20,7 @@
         <a href="login.php"><button type="button" class="btn btn-danger">SAIR</button></a>    
         <a href="CadastrodeProdutos.php"><button type="button" class="btn btn-primary">ADICIONAR PRODUTOS</button></a>
         <!-- <a href="ListarProdutos.php"><button type="button" class="btn btn-danger">PRODUTOS E ESTOQUE</button></a>     -->
-        <a href="AdicionarProdutos.php"><button type="button" class="btn btn-primary">Lista de Administradores</button></a>
+        <a href="listaradmins.php"><button type="button" class="btn btn-primary">Lista de Administradores</button></a>
     <?php
         $mysqlhostname= "144.22.244.104";
         $mysqlport="3306";

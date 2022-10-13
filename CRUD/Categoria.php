@@ -2,7 +2,7 @@
     <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="ListadeAdmin.css">
-        <title>PRODUTOS</title>
+        <title>Categorias</title>
     </head>
     <body>
         <header>
@@ -18,9 +18,8 @@
         </header>
         <h1>PRODUTOS</h1>
         <a href="login.php"><button type="button" class="btn btn-danger">SAIR</button></a>    
-        <a href="CadastrodeProdutos.php"><button type="button" class="btn btn-primary">ADICIONAR PRODUTOS</button></a>
-        <!-- <a href="ListarProdutos.php"><button type="button" class="btn btn-danger">PRODUTOS E ESTOQUE</button></a>     -->
-        <a href="AdicionarProdutos.php"><button type="button" class="btn btn-primary">Lista de Administradores</button></a>
+        <!-- <a href="CadastrodeProdutos.php"><button type="button" class="btn btn-primary"></button></a>         -->
+        <a href="listaradmins.php"><button type="button" class="btn btn-primary">Lista de Administradores</button></a>
     <?php
         $mysqlhostname= "144.22.244.104";
         $mysqlport="3306";
