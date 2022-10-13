@@ -1,8 +1,8 @@
-    <html>        
+<html>        
     <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="ListadeAdmin.css">
-        <title>Listar os Administradores</title>
+        <title>PRODUTOS</title>
     </head>
     <body>
         <header>
@@ -16,11 +16,11 @@
                 </ul>
             </nav>
         </header>
-        <h1>Lista de Administradores</h1>
+        <h1>PRODUTOS</h1>
         <a href="login.php"><button type="button" class="btn btn-danger">SAIR</button></a>    
-        <a href="cadastroAdm.php"><button type="button" class="btn btn-primary">ADICIONAR ADMINS</button></a>
-        <a href="ListarProdutos.php"><button type="button" class="btn btn-danger">PRODUTOS E ESTOQUE</button></a>    
-        <a href="AdicionarProdutos.php"><button type="button" class="btn btn-primary">ADICIONAR PRODUTOS</button></a>
+        <a href="CadastrodeProdutos.php"><button type="button" class="btn btn-primary">ADICIONAR PRODUTOS</button></a>
+        <!-- <a href="ListarProdutos.php"><button type="button" class="btn btn-danger">PRODUTOS E ESTOQUE</button></a>     -->
+        <a href="AdicionarProdutos.php"><button type="button" class="btn btn-primary">Lista de Administradores</button></a>
     <?php
         $mysqlhostname= "144.22.244.104";
         $mysqlport="3306";
@@ -32,20 +32,21 @@
         $dsn='mysql:host=' . $mysqlhostname . ";dbname=" . $mysqldatabase . ';port=' . $mysqlport;
         $pdo= new PDO($dsn, $mysqlusername, $mysqlpassword);
 
-        $cmd= $pdo->query("SELECT * FROM ADMINISTRADOR WHERE ADM_ATIVO=1");   
+        $cmd= $pdo->query("SELECT * FROM PRODUTO WHERE PRODUTO_ATIVO=1");   
         
-        $admins = $cmd->fetch(PDO::FETCH_NUM);
+        $produto = $cmd->fetch(PDO::FETCH_NUM);
 
     ?>
 
     <table border="1" class=table>
         <tr>
-            <th>Id</th>
-            <th>Nome</th>
-            <th>Email</th>
-            <th>Senha</th>
+            <th>Indentificador</th>
+            <th>categoria</th>
+            <th>Discrição</th>
+            <th>Preço</th>
+            <th>Desconto</th>
             <th>Atualizacao</th>
-            <th>Ocutar Admin</th>            
+            <th>Ocutar</th>            
         </tr>
 <?php
 
@@ -54,29 +55,34 @@ while($linha = $cmd->fetch()) {
     <tr>
         <td>
             <?php 
-                echo $linha["ADM_ID"];
+                echo $linha["PRODUTO_ID"];
             ?>
         </td>
         <td>
             <?php
-                echo $linha["ADM_NOME"];
+                echo $linha["PRODUTO_NOME"];
             ?>
         </td>
         <td>
             <?php
-                echo $linha["ADM_EMAIL"];
+                echo $linha["PRODUTO_DESC"];
             ?>
         </td>    
         <td>
             <?php
-                echo $linha["ADM_SENHA"];
+                echo $linha["PRODUTO_PRECO"];
             ?>
         </td>    
         <td>
-            <a href="atualizaradmin.php?id=<?php echo $linha["ADM_ID"] ?>">Atualizar</a>
+            <?php
+                echo $linha["PRODUTO_DESCONTO"];
+            ?>
+        </td>   
+        <td>
+            <a href="atualizarPRODUTO.php?id=<?php echo $linha["PRODUTO_ID"] ?>">Atualizar</a>
         </td>
         <td>
-            <a href="excluirform.php?id=<?php echo $linha["ADM_ID"] ?>">Ocutar</a>
+            <a href="excluirform.php?id=<?php echo $linha["PRODUTO_ID"] ?>">Ocutar</a>
         </td>        
     </tr>
 <?php

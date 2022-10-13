@@ -9,8 +9,8 @@
         <link rel="stylesheet" href="style.css" type="text/css">
     </head>
     <body>
-        <h1>Bravo 4 Fun</h1>          
-
+        <h1>Cadastro Atualizado com sucesso!</h1>          
+       <a href="listaradmins.php"><button type="button" class="btn btn-primary">Voltar para lista de admins</button></a> 
                
             <?php
                 
