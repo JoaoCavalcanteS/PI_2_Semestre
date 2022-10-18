@@ -79,12 +79,12 @@ nav .conteudo .links{
         <div class="conteudo">
         <div class="logo"> <img src="../Imagens/logobravo.png" alt="LogoMarca" class="logo"></div>
         <ul class="links">
-        <li><a href="login.php">Login</a></li>
-        <li><a href="CadastroAdm.php">Cadastro</a></li>
-        <li><a href="cadastroDeProdutos.php">Cadastro de Produtos</a></li>
+            <li><a href="login.php">Login</a></li>
+            <li><a href="CadastroAdm.php">Cadastro</a></li>
+            <li><a href="cadastroDeProdutos.php">Cadastro de Produtos</a></li>
             <li><a href="listaradmins.php">Lista ADM</a></li>
             <li><a href="../CATEGORIAS/listaCategoria.php">Categoria</a></li>
-            <li><a href="listaProdutos.php">Produtos</a></li>
+            <li><a href="../PRODUTOS/listaProdutos.php">Produtos</a></li>
         </ul>
         </div>
             </nav>
@@ -113,8 +113,8 @@ nav .conteudo .links{
             <th>Nome</th>
             <th>Email</th>
             <th>Senha</th>
-            <th>Atualizacao</th>
-            <th>Exclusao</th>            
+            <th>Atualização</th>
+            <th>ExclusÃo</th>            
         </tr>
 <?php
 
