@@ -22,8 +22,10 @@
         //coleta os dados do administrador
         $id = $_GET["id"];
 
-        //Realiza uma Query SQL para buscar o administrador que tenha o email e a senha passado pelo usuario
-        $categ= $pdo->query("SELECT * FROM CATEGORIA WHERE CATEGORIA_ID=" . $id)->fetch();
+        //Realiza uma Query SQL para buscar o administrador que tenha o email e a senha passado pelo usuario.
+
+        //Fazer a requisição de produto.
+        $categ= $pdo->query("SELECT * FROM PRODUTO WHERE PRODUTO_ID=" . $id)->fetch();
 
         //Se o retorno for vazio (0), então a senha ou email estao incorretos
         $categoria= $categ["CATEGORIA_NOME"];

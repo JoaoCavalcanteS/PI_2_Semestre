@@ -2,7 +2,7 @@
     <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="ListadeAdmin.css">
-        <title>Listar os Administradores</title>
+        <title>Listar os Produtos.</title>
     </head>
     <body>
         <header>
@@ -16,7 +16,7 @@
                 </ul>
             </nav>
         </header>
-        <h1>Lista de Administradores</h1>
+        <h1>Lista de Produtos.</h1>
         <span>
             <a href="login.php"><button type="button" class="btn btn-danger">Sair</button></a>    
             <a href="cadastroAdm.php"><button type="button" class="btn btn-primary">Adicionar Administradores</button></a>
@@ -34,12 +34,15 @@
         $dsn='mysql:host=' . $mysqlhostname . ";dbname=" . $mysqldatabase . ';port=' . $mysqlport;
         $pdo= new PDO($dsn, $mysqlusername, $mysqlpassword);
 
-        $cmd= $pdo->query("SELECT * FROM ADMINISTRADOR WHERE COALESCE(ADM_ATIVO,1)=1");   
+        //PAREI AQUI
+        //cod  $cmd= $pdo->query("SELECT * FROM PRODUTO WHERE COALESCE(PRODUTO_ATIVO,1)=1");   
+        $cmd= $pdo->query("SELECT * FROM PRODUTOS WHERE COALESCE(ADM_ATIVO,1)=1");   
         
         $admins = $cmd->fetch(PDO::FETCH_NUM);
 
     ?>
 
+<!--Organizar classificação de items da tabela-->
     <table border="1" class=table>
         <tr>
             <th>Id</th>
@@ -52,29 +55,32 @@
         </tr>
 <?php
 
+//Classificar os IDs das tabelas como por exemplo PRODUTO NOME, PRODUTO DESCRIÇÂO
 while($linha = $cmd->fetch()) {
 ?>
     <tr>
         <td>
             <?php 
-                echo $linha["ADM_ID"];
+                echo $linha["PRODUTO_"];
             ?>
         </td>
         <td>
             <?php
-                echo $linha["ADM_NOME"];
+                echo $linha[""];
             ?>
         </td>
         <td>
             <?php
-                echo $linha["ADM_EMAIL"];
+                echo $linha[""];
             ?>
         </td>    
         <td>
             <?php
-                echo $linha["ADM_SENHA"];
+                echo $linha[""];
             ?>
         </td>    
+
+        <!--Classificar -->
         <td>
             <a href="atualizaradmin.php?id=<?php echo $linha["ADM_ID"] ?>">Atualizar</a>
         </td>
