@@ -70,12 +70,12 @@ nav .conteudo .links{
         <div class="conteudo">
         <div class="logo"> <img src="../Imagens/logobravo.png" alt="LogoMarca" class="logo"></div>
         <ul class="links">
-        <li><a href="../CRUD/login.php">Login</a></li>
-        <li><a href="../CRUD/CadastroAdm.php">Cadastro</a></li>
-        <li><a href="../CRUD/cadastroDeProdutos.php">Cadastro de Produtos</a></li>
+            <li><a href="../CRUD/login.php">Login</a></li>
+            <li><a href="../CRUD/CadastroAdm.php">Cadastro</a></li>
+            <li><a href="../CRUD/cadastroDeProdutos.php">Cadastro de Produtos</a></li>
             <li><a href="../CRUD/listaradmins.php">Lista ADM</a></li>
             <li><a href="../CATEGORIAS/listaCategoria.php">Categoria</a></li>
-            <li><a href="../CRUD/listaProdutos.php">Produtos</a></li>
+            <li><a href="../PRODUTOS/listaProdutos.php">Produtos</a></li>
         </ul>
         </div>
             </nav>

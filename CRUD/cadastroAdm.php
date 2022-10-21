@@ -163,7 +163,7 @@ nav .conteudo .links{
         <li><a href="cadastroDeProdutos.php">Cadastro de Produtos</a></li>
             <li><a href="listaradmins.php">Lista ADM</a></li>
             <li><a href="../CATEGORIAS/listaCategoria.php">Categoria</a></li>
-            <li><a href="listaProdutos.php">Produtos</a></li>
+            <li><a href="../PRODUTOS/listaProdutos.php">Produtos</a></li>
         </ul>
         </div>
             </nav>

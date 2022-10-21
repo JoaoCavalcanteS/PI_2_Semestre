@@ -5,13 +5,12 @@
         <title>PRODUTOS</title>
     </head>
     <style>
-        <style>
         body {
         background-color: rgb(0, 0, 0);
         margin: 0;
         padding: 0;
         font-family: system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
-        background: #000000;
+        color:black;
 }
 
 
@@ -71,20 +70,19 @@ nav .conteudo .links{
 }
 
     </style>
-    </style>
     <body>
         <header>
-                <div class="menu">
+        <div class="menu">
     <nav>
         <div class="conteudo">
         <div class="logo"> <img src="../Imagens/logobravo.png" alt="LogoMarca" class="logo"></div>
         <ul class="links">
-            <li><a href="login.php">Login</a></li>
-            <li><a href="CadastroAdm.php">Cadastro</a></li>
+            <li><a href="../CRUD/login.php">Login</a></li>
+            <li><a href="../CRUD/CadastroAdm.php">Cadastro</a></li>
             <li><a href="cadastroDeProdutos.php">Cadastro de Produtos</a></li>
-            <li><a href="listaradmins.php">Lista ADM</a></li>
+            <li><a href="../CRUD/listaradmins.php">Lista ADM</a></li>
             <li><a href="../CATEGORIAS/listaCategoria.php">Categoria</a></li>
-            <li><a href="../PRODUTOS/listaProdutos.php">Produtos</a></li>
+            <li><a href="listaProdutos.php">Produtos</a></li>
         </ul>
         </div>
             </nav>
@@ -108,10 +106,10 @@ nav .conteudo .links{
     <table border="1" class="table">
         <tr>
             <th>Identificador</th>
-            <th>Categoria</th>
             <th>Descrição</th>
             <th>Preço</th>
             <th>Desconto</th>
+            <th>Categoria</th>
             <th>Atualização</th>
             <th>Ocultar</th>            
         </tr>
@@ -144,12 +142,17 @@ while($linha = $cmd->fetch()) {
             <?php
                 echo $linha["PRODUTO_DESCONTO"];
             ?>
+        </td>
+        <td>
+            <?php
+                echo $linha["CATEGORIA_ID"];
+            ?>
         </td>   
         <td>
             <a href="atualizarPRODUTO.php?id=<?php echo $linha["PRODUTO_ID"] ?>">Atualizar</a>
         </td>
         <td>
-            <a href="excluirform.php?id=<?php echo $linha["PRODUTO_ID"] ?>">Ocutar</a>
+            <a href="excluirform.php?id=<?php echo $linha["PRODUTO_ID"] ?>">Ocultar</a>
         </td>        
     </tr>
 <?php
