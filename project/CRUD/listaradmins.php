@@ -122,7 +122,7 @@
                 <th>Email</th>
                 <th>Senha</th>
                 <th>Atualização</th>
-                <th>Exclusão</th>
+                <th>Ocultar</th>
             </tr>
             <?php
 
@@ -153,7 +153,7 @@
                         <a href="atualizaradmin.php?id=<?php echo $linha["ADM_ID"] ?>">Atualizar</a>
                     </td>
                     <td>
-                        <a href="excluirform.php?id=<?php echo $linha["ADM_ID"] ?>">Excluir</a>
+                        <a href="excluirform.php?id=<?php echo $linha["ADM_ID"] ?>">Ocultar</a>
                     </td>
                 </tr>
             <?php

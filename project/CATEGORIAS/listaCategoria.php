@@ -2,10 +2,13 @@
 
 <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <link rel="stylesheet" href="../CRUD/ListadeAdmin.css">
+   
     <title>Lista das categorias</title>
 </head>
 <style>
+    body {
+        background-color: black;
+    }
     .table {
         position: absolute;
         top: 10%;
@@ -109,6 +112,8 @@
             <th>Id</th>
             <th>Categoria</th>
             <th>Descrição</th>
+            <th>Atualizar</th>
+            <th>Ocultar</th>
         </tr>
         <?php
 
@@ -134,7 +139,7 @@
                     <a href="atualizarProcesso.php?id=<?php echo $linha["CATEGORIA_ID"] ?>">Atualizar</a>
                 </td>
                 <td>
-                    <a href="excluirProcesso.php?id=<?php echo $linha["CATEGORIA_ID"] ?>">Excluir</a>
+                    <a href="excluirProcesso.php?id=<?php echo $linha["CATEGORIA_ID"] ?>">Ocultar</a>
                 </td>
             </tr>
         <?php
