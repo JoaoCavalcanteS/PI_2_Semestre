@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Processamento de Criacao de Administrador</title>
 </head>
+<style>
+    body {
+        background-color: black;
+        color: white;
+        text-align: center;
+    }
+</style>
  <body>
     <h1>Novo adm cadastrado</h1>
     <br>

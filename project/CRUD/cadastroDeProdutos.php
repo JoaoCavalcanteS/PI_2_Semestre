@@ -20,7 +20,7 @@
         margin: 0;
         padding: 0;
         font-family: system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
-        background: #000000;
+        background: black;
         overflow: hidden;
     }
 
@@ -117,6 +117,26 @@
         transition: .5s;
     }
 
+    a input[type="button"] {
+        width: 100%;
+        height: 50px;
+        border: 1px solid;
+        background: red;
+        border-radius: 25px;
+        font-size: 18px;
+        color: white;
+        font-weight: 700;
+        cursor: pointer;
+        outline: none;
+        margin: 25px 0;
+    }
+
+    a input[type="button"]:hover {
+        border-color: #126E82;
+        transition: .5s;
+    }
+
+
     .menu {
         background: black;
         position: fixed;
@@ -124,6 +144,10 @@
         box-shadow: 0 0 2rem red;
         border: 1px solid red;
         border-bottom: 10px solid red;
+    }
+
+    .menu .icone-pesquisa {
+        color: white;
     }
 
     .menu nav {
@@ -169,6 +193,27 @@
         background: red;
         transition: .3s;
     }
+
+    .menu .barra-pesquisa {
+        position: absolute;
+        height: 100%;
+        max-width: calc(100% - 50px);
+        width: 100%;
+        display: none;
+    }
+
+    .barra-pesquisa input {
+        width: 100%;
+        height: 100%;
+        border: none;
+        outline: none;
+        font-size: 17px;
+        background: black;
+    }
+
+    .barra-pesquisa input::placeholder {
+        color: white;
+    }
 </style>
 
 <body>
@@ -189,25 +234,36 @@
             </nav>
     </header>
     <div class="cadastrar-se">
-        <h1> Cadastro ADM </h1>
-        <form action="criarprocessamento.php" method="post">
-            <div class="cadastro">
-                <input type="text" required name="nome">
-                <span></span>
-                <label>Nome</label>
-            </div>
-            <div class="cadastro">
-                <input type="text" required name="email">
-                <label>E-mail</label>
-            </div>
-            <div class="cadastro">
-                <input type="password" required name="senha">
-                <label>Senha</label>
-            </div>
-            <input type="submit" value="Cadastrar">
-        </form>
-    </div>
-    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+        <div class="d-grid gap-2 inscreva">
+            <h1> Cadastro de Produto </h1>
+            <form action="CriarProduto.php" method="POST">
+                <div class="cadastro">
+                    <input type="text" required name="nome">
+                    <span></span>
+                    <label>Nome</label>
+                </div>
+                <div class="cadastro">
+                    <input type="text" required name="preco">
+                    <label>Preço</label>
+                </div>
+                <div class="cadastro">
+                    <input type="text" required name="desc">
+                    <label>Descrição:</label>
+                </div>
+                <div class="cadastro">
+                    <input type="text" required name="descont">
+                    <label>Desconto:</label>
+                </div>
+                <!-- <div class="form-check">
+                    <input class="form-check-input" type="radio" value=24 name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Documentario
+                    </label>
+                </div> -->
+                <input type="submit" value="Cadastrar">
+            </form>
+        </div>
+        </section>
 </body>
 
 </html>
