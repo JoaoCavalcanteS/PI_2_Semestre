@@ -71,7 +71,6 @@
         height: 2px;
         transition: .5s;
     }
-
     .login input:focus ~ label,
     .login input:valid ~ label{
         top: -5px;
@@ -81,7 +80,6 @@
     .login input:valid ~ span::before{
         width: 100%;
     }
-
     input[type="submit"]{
         width: 100%;
         height: 50px;
@@ -99,8 +97,6 @@
         border-color:#126E82;
         transition: .5s;
     }
-
-
     .logo {
     position: absolute;
     top: -4%;
@@ -113,7 +109,7 @@
     </style>
 <body>
     <header>
-        <img src="logobravo.png" alt="LogoMarca" class="logo">
+        <img src="../Imagens/logoBravo.png" alt="LogoMarca" class="logo">
         </header>
         <div class= "inscreva-se">
             <h1> Login </h1>

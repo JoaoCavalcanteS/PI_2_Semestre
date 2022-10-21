@@ -5,7 +5,7 @@
         </head>
     <body>
          <h1>Excluir o Administrador</h1>               
-            <P>funcionario excluido com sucesso!</P>
+
         <?php
 
         $mysqlhostname= "144.22.244.104";
@@ -16,14 +16,14 @@
 
 
         //mostra string de conexao ao MySql
-        $dsn = 'mysql:host=' . $mysqlhostname . ';dbname=' . $mysqldatabase . ';port=' . $mysqlport;
-        $pdo = new PDO($dsn, $mysqlusername, $mysqlpassword);       
+        $dsn='mysql:host=' . $mysqlhostname . ";dbname=" . $mysqldatabase . ';port=' . $mysqlport;
+        $pdo= new PDO($dsn, $mysqlusername, $mysqlpassword);        
                 
         //coleta os dados do administrador
         $id = $_GET["id"];
 
         //Realiza uma Query SQL para buscar o administrador que tenha o email e a senha passado pelo usuario
-        $admin = $pdo->query("SELECT * FROM ADMINISTRADOR WHERE ADM_ID=" . $id)->fetch() ;
+        $admin= $pdo->query("SELECT * FROM ADMINISTRADOR WHERE ADM_ID=" . $id)->fetch();
 
         //Se o retorno for vazio (0), então a senha ou email estao incorretos
         $nome= $admin["ADM_NOME"];
@@ -43,4 +43,4 @@
             </Form>
     </body>
 </html>        
-	
+5	

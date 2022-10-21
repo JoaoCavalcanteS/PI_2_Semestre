@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Processamento de Criacao de Administrador</title>
+    <title>Processo de Criação de categoria</title>
 </head>
  <body>
-    <h1>Produto cadastrado Com Sucesso</h1>
+    <h1>Cadastro de Categoria</h1>
     <br>
-        Retorne para a lista de administradores
+        Retorne para a lista de categoria
     <br>
-    <a href="listarProdutos.php"><button>Voltar para a Lista</button></a>
+    <a href="listaCategoria.php">Voltar para a Lista</a>
  </body>
 </html> 
 <?php
@@ -27,20 +27,17 @@ $dsn='mysql:host=' . $mysqlhostname . ";dbname=" . $mysqldatabase . ';port=' . $
 $pdo= new PDO($dsn, $mysqlusername, $mysqlpassword);
 
 //Captura os valores das variaveis
-$nome= $_POST["nome"];
-$preco= $_POST["preco"];
+$categoria= $_POST["categoria"];
 $desc= $_POST["desc"];
-$descont= $_POST["descont"];
-$categoria= $_POST["cat"];
 
-//Monta o comando de inserção
-$cmdtext= "INSERT INTO PRODUTO(PRODUTO_NOME, PRODUTO_DESC, PRODUTO_DESCONTO, CATEGORIA_ID, PRODUTO_PRECO ) VALUES('" . $nome . "','" . $desc . "','". $descont ."','". $categoria ."','". $preco ."')";
+//Monta o comando de inserção 
+$cmdtext= "INSERT INTO CATEGORIA(CATEGORIA_NOME, CATEGORIA_DESC) VALUES('" . $categoria . "','" . $desc . "')";
 $cmd = $pdo->prepare($cmdtext);
 
 //Executa o comando e verifica se teve sucesso
 $status = $cmd->execute();
 if($status){
-    echo "Produto criado com sucesso";
+    echo "Categoria criado com sucesso";
 }
 else{
     echo "Erro ao inserir";

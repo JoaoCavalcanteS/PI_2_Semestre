@@ -77,7 +77,6 @@
         height: 2px;
         transition: .5s;
     }
-
     .cadastro input:focus ~ label,
     .cadastro input:valid ~ label{
         top: -5px;
@@ -87,7 +86,6 @@
     .cadastro input:valid ~ span::before{
         width: 100%;
     }
-
     input[type="submit"]{
         width: 100%;
         height: 50px;
@@ -105,8 +103,6 @@
         border-color:#126E82;
         transition: .5s;
     }
-
-
 .menu{
     background: black;
     position: fixed;
@@ -114,10 +110,6 @@
     box-shadow: 0 0 2rem red;
       border: 1px solid red;
       border-bottom: 10px solid red;
-}
-
-.menu .icone-pesquisa{
-    color: white;
 }
 
 .menu nav{
@@ -129,24 +121,20 @@
     align-items: center;
     justify-content: space-between;
 }
-
 nav .conteudo{
     display: flex;
     align-items: center;
 }
-
 nav .conteudo .links{
     margin-left: 80px;
     display: flex;
 }
-
 .conteudo .logo {
     max-width: 100px;
     max-height: 100px;
     width: auto;
     height: auto;
 }
-
 .conteudo .links li{
     list-style: none;
 }
@@ -157,50 +145,29 @@ nav .conteudo .links{
     padding: 7px 17px;
     border-radius: 5px;
 }
-
 .conteudo .links li:hover a{
     background: red;
     transition: .3s;
 }
 
-.menu .barra-pesquisa{
-    position: absolute;
-    height: 100%;
-    max-width: calc(100% - 50px);
-    width: 100%;
-    display: none;
-}
-
-.barra-pesquisa input{
-    width: 100%;
-    height: 100%;
-    border: none;
-    outline: none;
-    font-size: 17px;
-    background: black;
-}
-
-.barra-pesquisa input::placeholder{
-    color: white;
-}
-
     </style>
 <body>
-    <div class="menu">
+    <header>
+<div class="menu">
     <nav>
         <div class="conteudo">
-        <div class="logo"> <img src="logobravo.png" alt="LogoMarca" class="logo"></div>
+        <div class="logo"> <img src="../Imagens/logobravo.png" alt="LogoMarca" class="logo"></div>
         <ul class="links">
-            <li><a href="listaradmins.php">Administrador</a></li>
-            <li><a href="ListarProdutos.php">Produtos</a></li>
-            <li><a href="Categoria.php">Categorias</a></li>
+        <li><a href="login.php">Login</a></li>
+        <li><a href="CadastroAdm.php">Cadastro</a></li>
+        <li><a href="cadastroDeProdutos.php">Cadastro de Produtos</a></li>
+            <li><a href="listaradmins.php">Lista ADM</a></li>
+            <li><a href="../CATEGORIAS/listaCategoria.php">Categoria</a></li>
+            <li><a href="../PRODUTOS/listaProdutos.php">Produtos</a></li>
         </ul>
         </div>
-        <form action="#" class="barra-pesquisa">
-            <input type="text" placeholder="Pesquise Algo...">
-        </form>   
-    </nav>
-    </div>
+            </nav>
+</header>
     <div class="cadastrar-se"> 
         <h1> Cadastro ADM </h1>               
         <form action="criarprocessamento.php" method="post">

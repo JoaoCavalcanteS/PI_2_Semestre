@@ -31,7 +31,7 @@ $nome= $_POST["nome"];
 $email= $_POST["email"];
 $senha= $_POST["senha"];
 
-//Monta o comando de inserção
+//Monta o comando de inserção 
 $cmdtext= "INSERT INTO ADMINISTRADOR(ADM_NOME, ADM_EMAIL, ADM_SENHA) VALUES('" . $nome . "','" . $email . "','" . $senha ."')";
 $cmd = $pdo->prepare($cmdtext);
 
