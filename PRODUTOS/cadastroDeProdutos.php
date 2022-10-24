@@ -124,82 +124,82 @@
     }
 
 
-.menu{
-    background: black;
-    position: fixed;
-    width: 100%;
-    box-shadow: 0 0 2rem red;
-      border: 1px solid red;
-      border-bottom: 10px solid red;
-}
+    .menu{
+        background: black;
+        position: fixed;
+        width: 100%;
+        box-shadow: 0 0 2rem red;
+        border: 1px solid red;
+        border-bottom: 10px solid red;
+    }
 
-.menu .icone-pesquisa{
-    color: white;
-}
+    .menu .icone-pesquisa{
+        color: white;
+    }
 
-.menu nav{
-    position: relative;
-    display: flex;
-    max-width: calc(100% - 200px);
-    margin: 0 auto;
-    height: 70px;
-    align-items: center;
-    justify-content: space-between;
-}
+    .menu nav{
+        position: relative;
+        display: flex;
+        max-width: calc(100% - 200px);
+        margin: 0 auto;
+        height: 70px;
+        align-items: center;
+        justify-content: space-between;
+    }
 
-nav .conteudo{
-    display: flex;
-    align-items: center;
-}
+    nav .conteudo{
+        display: flex;
+        align-items: center;
+    }
 
-nav .conteudo .links{
-    margin-left: 80px;
-    display: flex;
-}
+    nav .conteudo .links{
+        margin-left: 80px;
+        display: flex;
+    }
 
-.conteudo .logo {
-    max-width: 100px;
-    max-height: 100px;
-    width: auto;
-    height: auto;
-}
+    .conteudo .logo {
+        max-width: 100px;
+        max-height: 100px;
+        width: auto;
+        height: auto;
+    }
 
-.conteudo .links li{
-    list-style: none;
-}
-.conteudo .links li a{
-    color: white;
-    font-size: 18px;
-    font-weight: 500;
-    padding: 7px 17px;
-    border-radius: 5px;
-}
+    .conteudo .links li{
+        list-style: none;
+    }
+    .conteudo .links li a{
+        color: white;
+        font-size: 18px;
+        font-weight: 500;
+        padding: 7px 17px;
+        border-radius: 5px;
+    }
 
-.conteudo .links li:hover a{
-    background: red;
-    transition: .3s;
-}
+    .conteudo .links li:hover a{
+        background: red;
+        transition: .3s;
+    }
 
-.menu .barra-pesquisa{
-    position: absolute;
-    height: 100%;
-    max-width: calc(100% - 50px);
-    width: 100%;
-    display: none;
-}
+    .menu .barra-pesquisa{
+        position: absolute;
+        height: 100%;
+        max-width: calc(100% - 50px);
+        width: 100%;
+        display: none;
+    }
 
-.barra-pesquisa input{
-    width: 100%;
-    height: 100%;
-    border: none;
-    outline: none;
-    font-size: 17px;
-    background: black;
-}
+    .barra-pesquisa input{
+        width: 100%;
+        height: 100%;
+        border: none;
+        outline: none;
+        font-size: 17px;
+        background: black;
+    }
 
-.barra-pesquisa input::placeholder{
-    color: white;
-}
+    .barra-pesquisa input::placeholder{
+        color: white;
+    }
 
 </style>
 <body>
@@ -240,11 +240,14 @@ nav .conteudo .links{
                 <input type="text" required name="descont">
                 <label>Desconto:</label>
                 </div>
-            <div class="form-check">
-            <input class="form-check-input" type="radio" value= 24 name="flexRadioDefault" id="flexRadioDefault1">
-                <label class="form-check-label"  for="flexRadioDefault1">
-                    Documentario
-                </label>
+            <div class="cadastro">
+            <label>categoria</label>
+                <select name="categoria" id="">
+                        
+                <option value=""></option>
+
+                </select>
+                
             </div>                
             <input type="submit" value="Cadastrar">    
         </form>
