@@ -104,52 +104,74 @@
         transition: .5s;
     }
     .menu{
-        background: black;
-        position: fixed;
-        width: 100%;
-        box-shadow: 0 0 2rem red;
-        border: 1px solid red;
-        border-bottom: 10px solid red;
-    }
+    background: black;
+    position: absolute;
+    top: 0%;
+    width: 100%;
+    box-shadow: 0 0 2rem red;
+      border: 1px solid red;
+      border-bottom: 10px solid red;
+}
 
-    .menu nav{
-        position: relative;
-        display: flex;
-        max-width: calc(100% - 200px);
-        margin: 0 auto;
-        height: 70px;
-        align-items: center;
-        justify-content: space-between;
-    }
-    nav .conteudo{
-        display: flex;
-        align-items: center;
-    }
-    nav .conteudo .links{
-        margin-left: 80px;
-        display: flex;
-    }
-    .conteudo .logo {
-        max-width: 100px;
-        max-height: 100px;
-        width: auto;
-        height: auto;
-    }
-    .conteudo .links li{
-        list-style: none;
-    }
-    .conteudo .links li a{
-        color: white;
-        font-size: 18px;
-        font-weight: 500;
-        padding: 7px 17px;
-        border-radius: 5px;
-    }
-    .conteudo .links li:hover a{
-        background: red;
-        transition: .3s;
-    }
 
+.menu nav{
+    position: relative;
+    display: flex;
+    max-width: calc(100% - 200px);
+    margin: 0 auto;
+    height: 70px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav .conteudo{
+    display: flex;
+    align-items: center;
+}
+
+nav .conteudo .links{
+    margin-left: 80px;
+    display: flex;
+}
+
+.conteudo .logo {
+    max-width: 100px;
+    max-height: 100px;
+    width: auto;
+    height: auto;
+}
+
+.conteudo .links li{
+    list-style: none;
+}
+.conteudo .links li a{
+    position: relative;
+    top: 0px;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 7px 17px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.conteudo .links li:hover a{
+    background: red;
+    transition: .3s;
+}
+
+::-webkit-scrollbar{
+    height: 5px;
+    width: 5px;
+}
+
+::-webkit-scrollbar-track{
+    box-shadow: inset 0 0 6px red;
+}
+
+::-webkit-scrollbar-thumb{
+    box-shadow: inset 0 0 6px red;
+}
     </style>
 <body>
     <header>
@@ -160,7 +182,7 @@
         <ul class="links">
             <li><a href="login.php">Login</a></li>
             <li><a href="CadastroAdm.php">Cadastro</a></li>
-            <li><a href="cadastroDeProdutos.php">Cadastro de Produtos</a></li>
+            <li><a href="../PRODUTOS/cadastroDeProdutos.php">Cadastro de Produtos</a></li>
             <li><a href="listaradmins.php">Lista ADM</a></li>
             <li><a href="../CATEGORIAS/listaCategoria.php">Categoria</a></li>
             <li><a href="../PRODUTOS/listaProdutos.php">Produtos</a></li>

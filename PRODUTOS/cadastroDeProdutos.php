@@ -212,7 +212,7 @@
             <li><a href="../CRUD/login.php">Login</a></li>
             <li><a href="../CRUD/CadastroAdm.php">Cadastro</a></li>
             <li><a href="cadastroDeProdutos.php">Cadastro de Produtos</a></li>
-            <li><a href="listaradmins.php">Lista ADM</a></li>
+            <li><a href="../CRUD/listaradmins.php">Lista ADM</a></li>
             <li><a href="../CATEGORIAS/listaCategoria.php">Categoria</a></li>
             <li><a href="listaProdutos.php">Produtos</a></li>
         </ul>
@@ -241,17 +241,23 @@
                 <label>Desconto:</label>
                 </div>
             <div class="cadastro">
-            <label>categoria</label>
-                <select name="categoria" id="">
-                        
-                <option value=""></option>
+                <input type="hidden" value="<?php echo $_GET["id"]?>" name="id">
+                <select name="CATEGORIA_ID" id="CATEGORIA_ID" required>
+                    <option>Categoria</option>
+                    <?php
+                    $stmt = $pdo->prepare("SELECT * FROM CATEGORIA");
+                    $stmt->execute();
 
-                </select>
-                
-            </div>                
+                    if($stmt->rowCount() > 0) {
+                        while($dados = $stmt->fetch(pdo::FETCH_ASSOC)){
+                            echo "<option value='{$dados['CATEGORIA_ID']}'>{$dados['CATEGORIA_NOME']}</option>";
+                        }
+                    }
+                    ?>
+                    </select>
+            </div>                  
             <input type="submit" value="Cadastrar">    
         </form>
     </div>
-    </section>
     </body>
 </html>

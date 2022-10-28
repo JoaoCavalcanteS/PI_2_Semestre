@@ -5,69 +5,169 @@
         <title>PRODUTOS</title>
     </head>
     <style>
+        *{
+    box-sizing: border-box;
+}
+
         body {
-        background-color: rgb(0, 0, 0);
-        margin: 0;
-        padding: 0;
-        font-family: system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
-        color:black;
+            background-color: rgb(0, 0, 0);
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+            background: #000000;
         }
 
+        th{
+            color: white;
+        }
 
-        .table{
+        .table {
             position: absolute;
-            top: 10%;
-            box-sizing: border-box;
-            box-shadow:5px 5px 10px rgba(0, 0, 0, 0.699);
+            top: 13%;
+            width: 100%;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.699);
             margin: 10px 10px 10px 0px;
             color: rgb(255, 255, 255);
         }
-        .menu{
-            background: black;
-            position: absolute;
-            width: 100%;
-            box-shadow: 0 0 2rem red;
-            border: 1px solid red;
-            border-bottom: 10px solid red;
+
+        .table_header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: red;
         }
 
-        .menu nav{
+        .table_header p{
             position: relative;
-            display: flex;
-            max-width: calc(100% - 200px);
-            margin: 0 auto;
-            height: 70px;
-            align-items: center;
-            justify-content: space-between;
+            top: 8px;
+            font-size: large;
+            font-weight: 700;
         }
-        nav .conteudo{
-            display: flex;
-            align-items: center;
+
+        .table_content{
+            height: 650px;
         }
-        nav .conteudo .links{
-            margin-left: 80px;
-            display: flex;
+
+
+        table{
+            width: 100%;
+            table-layout: fixed;
+            min-width: 1000px;
+            border-collapse: collapse;
         }
-        .conteudo .logo {
-            max-width: 100px;
-            max-height: 100px;
-            width: auto;
-            height: auto;
-        }
-        .conteudo .links li{
-            list-style: none;
-        }
-        .conteudo .links li a{
+
+        thead th{
+            background-color: #126E82;
             color: white;
-            font-size: 18px;
-            font-weight: 500;
-            padding: 7px 17px;
-            border-radius: 5px;
+            font-size: 15px;
         }
-        .conteudo .links li:hover a{
-            background: red;
+
+        th, td{
+            border-bottom: 1px solid red;
+            padding: 10px 20px;
+            word-break: break-all;
+            text-align: center;
+        }
+
+        td img{
+            height: 60px;
+            width: 60px;
+            object-fit: cover;
+            border-radius: 15px;
+            border: 5px solid red;
+        }
+
+        tr td{
+            color: white;
+            font-weight: 500;
+        }
+
+        tr td a{
+            text-decoration: none;
+            color: white;
+        }
+
+        tr:hover td a {
+            color: #126E82;
             transition: .3s;
         }
+
+        tr:hover td{
+            color: red;
+            transition: .3s;
+        }
+
+        .menu{
+    background: black;
+    position: absolute;
+    top: 0%;
+    width: 100%;
+    box-shadow: 0 0 2rem red;
+      border: 1px solid red;
+      border-bottom: 10px solid red;
+}
+
+
+.menu nav{
+    position: relative;
+    display: flex;
+    max-width: calc(100% - 200px);
+    margin: 0 auto;
+    height: 70px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav .conteudo{
+    display: flex;
+    align-items: center;
+}
+
+nav .conteudo .links{
+    margin-left: 80px;
+    display: flex;
+}
+
+.conteudo .logo {
+    max-width: 100px;
+    max-height: 100px;
+    width: auto;
+    height: auto;
+}
+
+.conteudo .links li{
+    list-style: none;
+}
+.conteudo .links li a{
+    position: relative;
+    top: 8px;
+    left: -32px;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 7px 17px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.conteudo .links li:hover a{
+    background: red;
+    transition: .3s;
+}
+
+::-webkit-scrollbar{
+    height: 5px;
+    width: 5px;
+}
+
+::-webkit-scrollbar-track{
+    box-shadow: inset 0 0 6px red;
+}
+
+::-webkit-scrollbar-thumb{
+    box-shadow: inset 0 0 6px red;
+}
 
     </style>
     <body>
@@ -102,8 +202,13 @@
         $produto = $cmd->fetch(PDO::FETCH_NUM);
 
     ?>
-
-    <table border="1" class="table">
+<div class="table">
+            <div class="table_header">
+                <p>Lista de Produtos</p>
+            </div>
+            <div class="table_content">
+    <table border="1">
+        <thead>
         <tr>
             <th>Identificador</th>
             <th>Nome</th>
@@ -114,6 +219,8 @@
             <th>Atualização</th>
             <th>Ocultar</th>            
         </tr>
+</thead>
+<tbody>
 <?php
 
 while($linha = $cmd->fetch()) {
@@ -156,10 +263,14 @@ while($linha = $cmd->fetch()) {
             <a href="excluirform.php?id=<?php echo $linha["PRODUTO_ID"] ?>">Ocultar</a>
         </td>        
     </tr>
+    
 <?php
     } 
 ?>
+</tbody>
     </table>
+</div>
+</div>
         
             
     </body>
