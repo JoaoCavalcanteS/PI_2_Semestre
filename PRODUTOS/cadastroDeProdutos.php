@@ -240,11 +240,14 @@
                 <input type="text" required name="descont">
                 <label>Desconto:</label>
                 </div>
-            <div class="cadastro">
+            <div>
                 <input type="hidden" value="<?php echo $_GET["id"]?>" name="id">
                 <select name="CATEGORIA_ID" id="CATEGORIA_ID" required>
                     <option>Categoria</option>
                     <?php
+
+                    require_once '../BD/database.php';
+
                     $stmt = $pdo->prepare("SELECT * FROM CATEGORIA");
                     $stmt->execute();
 
@@ -254,7 +257,7 @@
                         }
                     }
                     ?>
-                    </select>
+                </select>
             </div>                  
             <input type="submit" value="Cadastrar">    
         </form>

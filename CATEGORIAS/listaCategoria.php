@@ -6,8 +6,8 @@
     </head>
     <style>
       *{
-    box-sizing: border-box;
-}
+        box-sizing: border-box;
+            }
 
         body {
             background-color: rgb(0, 0, 0);
@@ -98,75 +98,75 @@
             transition: .3s;
         }
             .menu{
-    background: black;
-    position: absolute;
-    top: 0%;
-    width: 100%;
-    box-shadow: 0 0 2rem red;
-      border: 1px solid red;
-      border-bottom: 10px solid red;
-}
+        background: black;
+        position: absolute;
+        top: 0%;
+        width: 100%;
+        box-shadow: 0 0 2rem red;
+        border: 1px solid red;
+        border-bottom: 10px solid red;
+        }
 
 
-.menu nav{
-    position: relative;
-    display: flex;
-    max-width: calc(100% - 200px);
-    margin: 0 auto;
-    height: 70px;
-    align-items: center;
-    justify-content: space-between;
-}
+        .menu nav{
+            position: relative;
+            display: flex;
+            max-width: calc(100% - 200px);
+            margin: 0 auto;
+            height: 70px;
+            align-items: center;
+            justify-content: space-between;
+        }
 
-nav .conteudo{
-    display: flex;
-    align-items: center;
-}
+        nav .conteudo{
+            display: flex;
+            align-items: center;
+        }
 
-nav .conteudo .links{
-    margin-left: 80px;
-    display: flex;
-}
+        nav .conteudo .links{
+            margin-left: 80px;
+            display: flex;
+        }
 
-.conteudo .logo {
-    max-width: 100px;
-    max-height: 100px;
-    width: auto;
-    height: auto;
-}
+        .conteudo .logo {
+            max-width: 100px;
+            max-height: 100px;
+            width: auto;
+            height: auto;
+        }
 
-.conteudo .links li{
-    list-style: none;
-}
-.conteudo .links li a{
-    position: relative;
-    top: 8px;
-    left: -32px;
-    color: white;
-    font-size: 18px;
-    font-weight: 500;
-    padding: 7px 17px;
-    border-radius: 5px;
-    text-decoration: none;
-}
+        .conteudo .links li{
+            list-style: none;
+        }
+        .conteudo .links li a{
+            position: relative;
+            top: 8px;
+            left: -32px;
+            color: white;
+            font-size: 18px;
+            font-weight: 500;
+            padding: 7px 17px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
 
-.conteudo .links li:hover a{
-    background: red;
-    transition: .3s;
-}
+        .conteudo .links li:hover a{
+            background: red;
+            transition: .3s;
+        }
 
-::-webkit-scrollbar{
-    height: 5px;
-    width: 5px;
-}
+        ::-webkit-scrollbar{
+            height: 5px;
+            width: 5px;
+        }
 
-::-webkit-scrollbar-track{
-    box-shadow: inset 0 0 6px red;
-}
+        ::-webkit-scrollbar-track{
+            box-shadow: inset 0 0 6px red;
+        }
 
-::-webkit-scrollbar-thumb{
-    box-shadow: inset 0 0 6px red;
-}
+        ::-webkit-scrollbar-thumb{
+            box-shadow: inset 0 0 6px red;
+        }
 
     </style>
     <body>
@@ -188,15 +188,7 @@ nav .conteudo .links{
         </header>
         
     <?php
-        $mysqlhostname= "144.22.244.104";
-        $mysqlport="3306";
-        $mysqlusername="Bravo4Fun";
-        $mysqlpassword="Bravo4Fun";
-        $mysqldatabase="Bravo4Fun";
-
-        
-        $dsn='mysql:host=' . $mysqlhostname . ";dbname=" . $mysqldatabase . ';port=' . $mysqlport;
-        $pdo= new PDO($dsn, $mysqlusername, $mysqlpassword);
+        require_once '../BD/database.php';
 
         $cmd= $pdo->query("SELECT * FROM CATEGORIA WHERE COALESCE(CATEGORIA_ATIVO,1)=1");   
         
