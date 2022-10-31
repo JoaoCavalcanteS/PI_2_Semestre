@@ -21,4 +21,4 @@ if($status){
 else{
     echo "Erro ao inserir";
 }
-?>
+?>''

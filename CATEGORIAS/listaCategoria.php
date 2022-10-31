@@ -201,7 +201,7 @@
             </div>
             <div class="table_content">
     <table border="1">
-        <thead>
+        
         <tr>
             <th>Id</th>
             <th>Categoria</th>
@@ -209,8 +209,8 @@
             <th>Atualização</th>
             <th>Ocultação</th>          
         </tr>
-</thead>
-<tbody>
+
+
 <?php
 
 while($linha = $cmd->fetch()) {
@@ -241,7 +241,7 @@ while($linha = $cmd->fetch()) {
 <?php
     } 
 ?>
-</tbody>
+
     </table>
 
     </body>
