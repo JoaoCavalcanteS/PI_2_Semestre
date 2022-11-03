@@ -8,5 +8,5 @@ $mysqldatabase="Bravo4Fun";
 //mostra string de conexao ao MySql
 $dsn='mysql:host=' . $mysqlhostname . ";dbname=" . $mysqldatabase . ';port=' . $mysqlport;
 $pdo= new PDO($dsn, $mysqlusername, $mysqlpassword);
-$id = $_GET["id"];
+// $id = $_GET["id"];
 ?>
