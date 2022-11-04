@@ -8,24 +8,13 @@
 
         <?php
 
-        $mysqlhostname= "144.22.244.104";
-        $mysqlport="3306";
-        $mysqlusername="Bravo4Fun";
-        $mysqlpassword="Bravo4Fun";
-        $mysqldatabase="Bravo4Fun";
-
-
-        //mostra string de conexao ao MySql
-        $dsn='mysql:host=' . $mysqlhostname . ";dbname=" . $mysqldatabase . ';port=' . $mysqlport;
-        $pdo= new PDO($dsn, $mysqlusername, $mysqlpassword);        
+        require_once '../BD/database.php';        
                 
         //coleta os dados do administrador
         $id = $_GET["id"];
 
-        //Realiza uma Query SQL para buscar o administrador que tenha o email e a senha passado pelo usuario.
-
-        //Fazer a requisição de produto.
-        $categ= $pdo->query("SELECT * FROM PRODUTO WHERE PRODUTO_ID=" . $id)->fetch();
+        //Realiza uma Query SQL para buscar o administrador que tenha o email e a senha passado pelo usuario
+        $categ= $pdo->query("SELECT * FROM CATEGORIA WHERE CATEGORIA_ID=" . $id)->fetch();
 
         //Se o retorno for vazio (0), então a senha ou email estao incorretos
         $categoria= $categ["CATEGORIA_NOME"];
