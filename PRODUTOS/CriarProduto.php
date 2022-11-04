@@ -21,14 +21,17 @@
 require_once '../BD/database.php';
 
 //Captura os valores das variaveis
-$nome= $_POST["nome"];
-$preco= $_POST["preco"];
-$desc= $_POST["desc"];
-$descont= $_POST["descont"];
-$categoria= $_POST["cat"];
+$nome = $_POST["nome"];
+$preco = $_POST["preco"];
+$precoInt = intval($preco);
+$desc = $_POST["desc"];
+$descont = $_POST["descont"];
+$descontInt = intval($descont);
+$categoria = $_POST["cat"];
+$categoriaInt = intval($categoria);
 
 //Monta o comando de inserção
-$cmdtext= "INSERT INTO PRODUTO(PRODUTO_NOME, PRODUTO_DESC, PRODUTO_PRECO, PRODUTO_DESCONTO, CATEGORIA_ID ) VALUES('" . $nome . "','" . $desc . "','". $preco ."','". $descont ."','". $categoria ."')";
+$cmdtext= "INSERT INTO PRODUTO(PRODUTO_NOME, PRODUTO_DESC, PRODUTO_PRECO, PRODUTO_DESCONTO, CATEGORIA_ID, PRODUTO_ATIVO ) VALUES('" . $nome . "','" . $desc . "',". $precoInt .",". $descontInt .",". $categoria .",1)";
 $cmd = $pdo->prepare($cmdtext);
 
 //Executa o comando e verifica se teve sucesso
@@ -39,4 +42,4 @@ if($status){
 else{
     echo "Erro ao inserir";
 }
-?>''
+?>

@@ -189,14 +189,7 @@
         </div>
             </nav>
         </header>
-    <?php
-        require_once '../BD/database.php';
-
-        $cmd= $pdo->query("SELECT * FROM PRODUTO WHERE COALESCE(PRODUTO_ATIVO,1)=1");   
-                                    
-        $produto = $cmd->fetch(PDO::FETCH_NUM);
-
-    ?>
+    
 <div class="table">
             <div class="table_header">
                 <p>Lista de Produtos</p>
@@ -215,8 +208,13 @@
             <th>Ocultar</th>            
         </tr>
 </thead>
-<tbody>
+
 <?php
+require_once '../BD/database.php';
+
+$cmd= $pdo->query("SELECT * FROM PRODUTO WHERE COALESCE(PRODUTO_ATIVO,1)=1");   
+                            
+$produto = $cmd->fetch(PDO::FETCH_NUM);
 
 while($linha = $cmd->fetch()) {
 ?>
@@ -262,7 +260,7 @@ while($linha = $cmd->fetch()) {
 <?php
     } 
 ?>
-</tbody>
+
     </table>
 </div>
 </div>
