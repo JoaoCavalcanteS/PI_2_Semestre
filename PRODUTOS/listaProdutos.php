@@ -208,6 +208,7 @@
                         <th>Preço</th>
                         <th>Desconto</th>
                         <th>Categoria</th>                       
+                        <th>Evento</th>                       
                         <th>Atualização</th>
                         <th>Ocultar</th>
                     </tr>
@@ -224,7 +225,15 @@
                $dsn = 'mysql:host=' . $mysqlhostname . ";dbname=" . $mysqldatabase . ';port=' . $mysqlport;
                $pdo = new PDO($dsn, $mysqlusername, $mysqlpassword);
 
-                $cmd = $pdo->query("SELECT * FROM PRODUTO WHERE COALESCE(PRODUTO_ATIVO,1)=1");
+                $cmd = $pdo->query("SELECT P.PRODUTO_ID,
+                P.PRODUTO_NOME,
+                P.PRODUTO_DESC,
+                P.PRODUTO_PRECO,
+                P.PRODUTO_DESCONTO,
+                P.CATEGORIA_ID,
+                IMG.IMAGEM_URL                
+                FROM PRODUTO AS P
+                INNER JOIN PRODUTO_IMAGEM AS IMG ON IMG.PRODUTO_ID = P.PRODUTO_ID WHERE COALESCE(P.PRODUTO_ATIVO,1)=1");
                 
 
                 $produto = $cmd->fetch(PDO::FETCH_NUM);                
@@ -261,6 +270,11 @@
                             <?php
                             echo $linha["CATEGORIA_ID"];
                             ?>
+                        </td>
+                        <td>
+                            <a href="<?php
+                            echo $linha["IMAGEM_URL"];
+                            ?>"> Imagens </a>                            
                         </td>                      
                         <td>
                             <a href="atualizarPRODUTO.php?id=<?php echo $linha["PRODUTO_ID"] ?>">Atualizar</a>

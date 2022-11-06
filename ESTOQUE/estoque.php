@@ -207,7 +207,7 @@
                         <th>Nome</th>                                               
                         <th>Categoria</th>
                         <th>Imagem Ordem</th>
-                        <th>Imagem URL</th>
+                        <th>Imagens</th>
                     </tr>
                 </thead>
 
@@ -272,8 +272,7 @@
                         <td>
                             <a href="<?php
                             echo $linha["IMAGEM_URL"];
-                            ?>"> Imagens </a>
-                            
+                            ?>"> Imagens </a>                            
                         </td>
                     </tr>
 
