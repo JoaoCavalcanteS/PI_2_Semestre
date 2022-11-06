@@ -19,16 +19,16 @@
 
                 //Captura os valores das variaveis
                 $nome= $_POST["nome"];
-                $categoria=$_POST["categoria"];
+                $categoria=$_POST["cat"];
                 $preco=$_POST["preco"];
                 $desc=$_POST["descricao"];
                 $desconto=$_POST["desconto"];
-
                 // requisição do cliente!
-                $id = $_POST["nomeId"];
+                $id = $_POST["id"];
+                
 
                 //Monta o comando de update!
-                $cmdtext= "UPDATE CATEGORIA set PRODUTO_NOME = '$nome', PRODUTO_DESC = '$desc', PRODUTO_PRECO = '$preco', PRODUTO_DESCONTO = '$desconto', CATEGORIA_ID = '$categoria' where PRODUTO_ID=  $id";
+                $cmdtext= "UPDATE CATEGORIA set PRODUTO_NOME = '$nome', PRODUTO_DESC = '$desc', PRODUTO_PRECO = '$preco', PRODUTO_DESCONTO = '$desconto', CATEGORIA_ID = '$categoria' where PRODUTO_ID=  '$id'";
                 $cmd = $pdo->prepare($cmdtext);
 
                 //Executa o comando e verifica se teve sucesso

@@ -225,7 +225,7 @@
         <form action="CriarProduto.php" method="POST">
             <div class="cadastro">
                 <input type="text" required name="nome">
-                <span></span>
+                <span>Atualizar</span>
                 <label>Nome</label>
             </div>
             <div class="cadastro">
