@@ -160,7 +160,7 @@ $categoria=$admin["PRODUTO_ID"];
 ?>
 <form action="atualizarProdutoProcess.php?id=<?php echo $id ?>" method="POST">
     <div class="cadastro">
-<input type="text" name="nome" value="<?php echo $nome?> ">
+<input type="text" name="id" value="<?php echo $id?> ">
 <label>ID</label>
     </div>
     <div class="cadastro">

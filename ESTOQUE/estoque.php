@@ -204,7 +204,7 @@
                     <tr>
                         <th>Identificador</th>
                         <th>Quantidade</th>
-                        <th>Nome</th>                                               
+                        <th>Nome</th>
                         <th>Categoria</th>
                         <th>Imagem Ordem</th>
                         <th>Imagens</th>
@@ -258,7 +258,7 @@
                             <?php
                             echo $linha["PRODUTO_NOME"];
                             ?>
-                        </td>                                             
+                        </td>
                         <td>
                             <?php
                             echo $linha["CATEGORIA_ID"];
@@ -271,8 +271,8 @@
                         </td>
                         <td>
                             <a href="<?php
-                            echo $linha["IMAGEM_URL"];
-                            ?>"> Imagens </a>                            
+                                        echo $linha["IMAGEM_URL"];
+                                        ?>"> Imagens </a>
                         </td>
                     </tr>
 
