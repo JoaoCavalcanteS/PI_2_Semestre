@@ -207,7 +207,7 @@
 <div class="menu">
     <nav>
         <div class="conteudo">
-        <div class="logo"> <img src="../Imagens/logobravo.png" alt="LogoMarca" class="logo"></div>
+        <div class="logo"><a href="../CRUD/menu.php"><img src="../Imagens/logobravo.png" alt="LogoMarca" class="logo"></a></div>
         <ul class="links">
             <li><a href="../CRUD/login.php">Login</a></li>
             <li><a href="../CRUD/CadastroAdm.php">Cadastro</a></li>

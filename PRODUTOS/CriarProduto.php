@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Processo de Inclusão de Produto</title>
 </head>
- <body>
+
+<body>
     <h1>Processo de Inclusão de Produto</h1>
     <br>
-        Retorne para a lista de produtos
+    Retorne para a lista de produtos
     <br>
     <a href="listaProdutos.php">Voltar para a Lista</a>
- </body>
-</html> 
+</body>
+
+</html>
 
 
 <?php
-//Dados para conexao ao MySQL
-require_once '../BD/database.php';
 
 //Captura os valores das variaveis
 $nome = $_POST["nome"];
@@ -31,15 +32,14 @@ $categoria = $_POST["cat"];
 $categoriaInt = intval($categoria);
 
 //Monta o comando de inserção
-$cmdtext= "INSERT INTO PRODUTO(PRODUTO_NOME, PRODUTO_DESC, PRODUTO_PRECO, PRODUTO_DESCONTO, CATEGORIA_ID, PRODUTO_ATIVO ) VALUES('" . $nome . "','" . $desc . "',". $precoInt .",". $descontInt .",". $categoria .",1)";
+$cmdtext = "INSERT INTO PRODUTO(PRODUTO_NOME, PRODUTO_DESC, PRODUTO_PRECO, PRODUTO_DESCONTO, CATEGORIA_ID, PRODUTO_ATIVO ) VALUES('" . $nome . "','" . $desc . "'," . $precoInt . "," . $descontInt . "," . $categoria . ",1)";
 $cmd = $pdo->prepare($cmdtext);
 
 //Executa o comando e verifica se teve sucesso
 $status = $cmd->execute();
-if($status){
+if ($status) {
     echo "Produto criado com sucesso";
-}
-else{
+} else {
     echo "Erro ao inserir";
 }
 ?>

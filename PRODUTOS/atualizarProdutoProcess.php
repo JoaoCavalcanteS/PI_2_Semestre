@@ -15,7 +15,8 @@
             <?php
                 
                 //Dados para conexao ao MySQL
-                require_once '../BD/database.php';
+                require_once '../BD/database.php';                
+                $id = $_GET["id"];
 
                 //Captura os valores das variaveis
                 $nome= $_POST["nome"];
@@ -23,12 +24,10 @@
                 $preco=$_POST["preco"];
                 $desc=$_POST["descricao"];
                 $desconto=$_POST["desconto"];
-                // requisição do cliente!
-                $id = $_POST["id"];
                 
 
                 //Monta o comando de update!
-                $cmdtext= "UPDATE CATEGORIA set PRODUTO_NOME = '$nome', PRODUTO_DESC = '$desc', PRODUTO_PRECO = '$preco', PRODUTO_DESCONTO = '$desconto', CATEGORIA_ID = '$categoria' where PRODUTO_ID=  '$id'";
+                $cmdtext= "UPDATE PRODUTO set PRODUTO_NOME = '$nome', PRODUTO_DESC = '$desc', PRODUTO_PRECO = '$preco', PRODUTO_DESCONTO = '$desconto', CATEGORIA_ID = '$categoria' WHERE PRODUTO_ID=" . $id;
                 $cmd = $pdo->prepare($cmdtext);
 
                 //Executa o comando e verifica se teve sucesso
@@ -42,7 +41,7 @@
                 }     
                 
             ?>
-            <a href="listaProduto.php">Voltar para a Lista</a>
+            <a href="listaProdutos.php">Voltar para a Lista</a>
         
     </body>
 </html>

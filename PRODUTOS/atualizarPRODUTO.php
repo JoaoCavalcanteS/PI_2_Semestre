@@ -14,7 +14,7 @@ $categoria=$admin["PRODUTO_ID"];
 
 
 ?>
-<form action="atualizarProdutoProcess.php" method="POST">
+<form action="atualizarProdutoProcess.php?id=<?php echo $id ?>" method="POST">
 <input type="hidden" name="nome" value="<?php echo $nome?> ">
 <span class="input-group-text" id="inputGroup-sizing-sm">Nome: </span>
 <input type="text" class="form-control" name="nome" value="<?php echo $nome ?> " aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"> 
