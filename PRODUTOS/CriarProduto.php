@@ -11,7 +11,7 @@
 <body>
     <h1>Processo de Inclusão de Produto</h1>
     <br>
-    Retorne para a lista de produtos
+    Retorne para a lista de Eventos
     <br>
     <a href="listaProdutos.php">Voltar para a Lista</a>
 </body>

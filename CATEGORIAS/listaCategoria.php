@@ -178,10 +178,11 @@
         <ul class="links">
             <li><a href="../CRUD/login.php">Login</a></li>
             <li><a href="../CRUD/CadastroAdm.php">Cadastro</a></li>
-            <li><a href="../CRUD/cadastroDeProdutos.php">Cadastro de Produtos</a></li>
+            <li><a href="../PRODUTOS/cadastroDeProdutos.php">Cadastro de Produtos</a></li>
             <li><a href="../CRUD/listaradmins.php">Lista ADM</a></li>
             <li><a href="../CATEGORIAS/listaCategoria.php">Categoria</a></li>
             <li><a href="../PRODUTOS/listaProdutos.php">Produtos</a></li>
+            <li><a href="../ESTOQUE/estoque.php">Estoque</a></li>
         </ul>
         </div>
             </nav>

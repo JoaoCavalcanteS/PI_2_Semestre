@@ -298,7 +298,7 @@
         <span>Link para a lista de categorias.</span>
     </a>
 
-      <a href="" class="card">
+      <a href="../ESTOQUE/estoque.php" class="card">
         <div class="icon">
         <img src="estoque.png"/>
         </div>

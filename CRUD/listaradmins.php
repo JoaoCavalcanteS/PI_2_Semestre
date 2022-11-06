@@ -188,6 +188,7 @@
                             <li><a href="listaradmins.php">Lista ADM</a></li>
                             <li><a href="../CATEGORIAS/listaCategoria.php">Categoria</a></li>
                             <li><a href="../PRODUTOS/listaProdutos.php">Produtos</a></li>
+                            <li><a href="../ESTOQUE/estoque.php">Estoque</a></li>
                         </ul>
                     </div>
                 </nav>

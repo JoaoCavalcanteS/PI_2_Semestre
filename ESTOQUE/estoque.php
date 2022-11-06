@@ -3,7 +3,7 @@
 <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="ListadeAdmin.css">
-    <title>PRODUTOS</title>
+    <title>Estoque</title>
 </head>
 
 
@@ -196,40 +196,51 @@
 
     <div class="table">
         <div class="table_header">
-            <p>Lista de Eventos</p>
+            <p>Estoque de Engressos</p>
         </div>
         <div class="table_content">
             <table border="1">
                 <thead>
                     <tr>
                         <th>Identificador</th>
-                        <th>Nome</th>
-                        <th>Descrição</th>
-                        <th>Preço</th>
-                        <th>Desconto</th>
-                        <th>Categoria</th>                       
-                        <th>Atualização</th>
-                        <th>Ocultar</th>
+                        <th>Quantidade</th>
+                        <th>Nome</th>                                               
+                        <th>Categoria</th>
+                        <th>Imagem Ordem</th>
+                        <th>Imagem URL</th>
                     </tr>
                 </thead>
 
+
                 <?php
-               $mysqlhostname = "144.22.244.104";
-               $mysqlport = "3306";
-               $mysqlusername = "Bravo4Fun";
-               $mysqlpassword = "Bravo4Fun";
-               $mysqldatabase = "Bravo4Fun";
-               
-               //mostra string de conexao ao MySql
-               $dsn = 'mysql:host=' . $mysqlhostname . ";dbname=" . $mysqldatabase . ';port=' . $mysqlport;
-               $pdo = new PDO($dsn, $mysqlusername, $mysqlpassword);
+                $mysqlhostname = "144.22.244.104";
+                $mysqlport = "3306";
+                $mysqlusername = "Bravo4Fun";
+                $mysqlpassword = "Bravo4Fun";
+                $mysqldatabase = "Bravo4Fun";
 
-                $cmd = $pdo->query("SELECT * FROM PRODUTO WHERE COALESCE(PRODUTO_ATIVO,1)=1");
-                
+                //mostra string de conexao ao MySql
+                $dsn = 'mysql:host=' . $mysqlhostname . ";dbname=" . $mysqldatabase . ';port=' . $mysqlport;
+                $pdo = new PDO($dsn, $mysqlusername, $mysqlpassword);
 
-                $produto = $cmd->fetch(PDO::FETCH_NUM);                
+
+                $cmd = $pdo->query("SELECT 
+                P.PRODUTO_ID,
+                P.PRODUTO_NOME,                              
+                P.CATEGORIA_ID,
+                E.PRODUTO_ID,
+                E.PRODUTO_QTD,
+                IMG.IMAGEM_ORDEM,
+                IMG.IMAGEM_URL FROM PRODUTO AS P
+                INNER JOIN PRODUTO_ESTOQUE AS E ON P.PRODUTO_ID = E.PRODUTO_ID AND COALESCE(P.PRODUTO_ATIVO,1)=1
+                INNER JOIN PRODUTO_IMAGEM AS IMG ON IMG.PRODUTO_ID = P.PRODUTO_ID ");
+
+
+                $produto = $cmd->fetch(PDO::FETCH_NUM);
+
 
                 while ($linha = $cmd->fetch()) {
+
                 ?>
                     <tr>
                         <td>
@@ -239,39 +250,36 @@
                         </td>
                         <td>
                             <?php
+                            echo $linha["PRODUTO_QTD"];
+                            ?>
+                        </td>
+
+                        <td>
+                            <?php
                             echo $linha["PRODUTO_NOME"];
                             ?>
-                        </td>
-                        <td>
-                            <?php
-                            echo $linha["PRODUTO_DESC"];
-                            ?>
-                        </td>
-                        <td>
-                            <?php
-                            echo $linha["PRODUTO_PRECO"];
-                            ?>
-                        </td>
-                        <td>
-                            <?php
-                            echo $linha["PRODUTO_DESCONTO"];
-                            ?>
-                        </td>
+                        </td>                                             
                         <td>
                             <?php
                             echo $linha["CATEGORIA_ID"];
                             ?>
-                        </td>                      
-                        <td>
-                            <a href="atualizarPRODUTO.php?id=<?php echo $linha["PRODUTO_ID"] ?>">Atualizar</a>
                         </td>
                         <td>
-                            <a href="ExcluirProdutos.php?id=<?php echo $linha["PRODUTO_ID"] ?>">Ocultar</a>
+                            <?php
+                            echo $linha["IMAGEM_ORDEM"];
+                            ?>
+                        </td>
+                        <td>
+                            <a href="<?php
+                            echo $linha["IMAGEM_URL"];
+                            ?>"> Imagens </a>
+                            
                         </td>
                     </tr>
 
                 <?php
                 }
+
                 ?>
 
             </table>
