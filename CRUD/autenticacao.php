@@ -30,7 +30,7 @@ if(count($admin)==0){
 }
 else{
     
-    header("Location: listaradmins.php");
+    header("Location: menu.php");
 }
 
 ?>

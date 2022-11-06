@@ -241,8 +241,8 @@
                 <label>Desconto:</label>
                 </div>
             <div>
-                <input type="hidden" value="<?php echo $_GET["id"]?>" name="id">
-                <select name="CATEGORIA_ID" id="CATEGORIA_ID" required>
+                <input type="hidden" value="<?php echo $_GET["id"]?>" name="cat">
+                <select name="cat" id="CATEGORIA_ID" required>
                     <option>Categoria</option>
                     <?php
 
