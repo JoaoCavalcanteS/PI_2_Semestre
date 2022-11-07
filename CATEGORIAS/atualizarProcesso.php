@@ -154,7 +154,7 @@
 
 <body>
     <header>
-        <img src="../CRUD/logoBravo.png" alt="LogoMarca" class="logo">
+        <img src="../Imagens/logoBravo.png" alt="LogoMarca" class="logo">
     </header>
     <div class="cadastrar-se">
         <h1> Atualizar Categoria</h1>

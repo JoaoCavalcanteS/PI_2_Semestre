@@ -187,7 +187,7 @@
                         <li><a href="../PRODUTOS/cadastroDeProdutos.php">Cadastro de Produtos</a></li>
                         <li><a href="../CRUD/listaradmins.php">Lista ADM</a></li>
                         <li><a href="../CATEGORIAS/listaCategoria.php">Categoria</a></li>
-                        <li><a href="../PRODUTOS/listaProdutos.php">Produtos</a></li>
+                        <li><a href="../PRODUTOS/listaProdutos.php">Eventos</a></li>
                         <li><a href="../ESTOQUE/estoque.php">Estoque</a></li>
                     </ul>
                 </div>
@@ -271,7 +271,8 @@
                         </td>
                         <td>
                             <a href="<?php
-                                        echo $linha["IMAGEM_URL"];
+                                        $testebool = $linha["IMAGEM_URL"];
+                                        echo $testebool;
                                         ?>"> Imagens </a>
                         </td>
                     </tr>

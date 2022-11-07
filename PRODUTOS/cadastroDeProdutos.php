@@ -214,7 +214,8 @@
             <li><a href="cadastroDeProdutos.php">Cadastro de Produtos</a></li>
             <li><a href="../CRUD/listaradmins.php">Lista ADM</a></li>
             <li><a href="../CATEGORIAS/listaCategoria.php">Categoria</a></li>
-            <li><a href="listaProdutos.php">Produtos</a></li>
+            <li><a href="listaProdutos.php">Eventos</a></li>
+            <li><a href="../ESTOQUE/estoque.php">Estoque</a></li>
         </ul>
         </div>
             </nav>

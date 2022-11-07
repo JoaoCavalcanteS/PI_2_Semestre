@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
-    <title>Atualização-Categoria</title>
+    <title>Atualizar Evento</title>
 </head>
 <style>
         body {
@@ -138,10 +138,10 @@
     </style>
 <body>
         <header>
-            <img src="../CRUD/logoBravo.png" alt="LogoMarca" class="logo">
+             <img src="../Imagens/logoBravo.png" alt="LogoMarca" class="logo">
         </header>
     <div class="cadastrar-se"> 
-        <h1> Atualizar Produto</h1>
+        <h1> Atualizar Evento</h1>
         <?php
 require_once '../BD/database.php';
 $id = $_GET["id"];
