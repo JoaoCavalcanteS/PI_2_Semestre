@@ -3,7 +3,8 @@
 <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="ListadeAdmin.css">
-    <title>Eventos</title>
+    <link rel="icon" type="image/x-icon" href="../imagens/logoBravo.png">
+    <title>Bravo4Fun</title>
 </head>
 
 
@@ -207,23 +208,23 @@
                         <th>Descrição</th>
                         <th>Preço</th>
                         <th>Desconto</th>
-                        <th>Categoria</th>                       
-                        <th>Evento</th>                       
+                        <th>Categoria</th>
+                        <th>Evento</th>
                         <th>Atualização</th>
                         <th>Ocultar</th>
                     </tr>
                 </thead>
 
                 <?php
-               $mysqlhostname = "144.22.244.104";
-               $mysqlport = "3306";
-               $mysqlusername = "Bravo4Fun";
-               $mysqlpassword = "Bravo4Fun";
-               $mysqldatabase = "Bravo4Fun";
-               
-               //mostra string de conexao ao MySql
-               $dsn = 'mysql:host=' . $mysqlhostname . ";dbname=" . $mysqldatabase . ';port=' . $mysqlport;
-               $pdo = new PDO($dsn, $mysqlusername, $mysqlpassword);
+                $mysqlhostname = "144.22.244.104";
+                $mysqlport = "3306";
+                $mysqlusername = "Bravo4Fun";
+                $mysqlpassword = "Bravo4Fun";
+                $mysqldatabase = "Bravo4Fun";
+
+                //mostra string de conexao ao MySql
+                $dsn = 'mysql:host=' . $mysqlhostname . ";dbname=" . $mysqldatabase . ';port=' . $mysqlport;
+                $pdo = new PDO($dsn, $mysqlusername, $mysqlpassword);
 
                 $cmd = $pdo->query("SELECT P.PRODUTO_ID,
                 P.PRODUTO_NOME,
@@ -234,9 +235,9 @@
                 IMG.IMAGEM_URL                
                 FROM PRODUTO AS P
                 INNER JOIN PRODUTO_IMAGEM AS IMG ON IMG.PRODUTO_ID = P.PRODUTO_ID WHERE COALESCE(P.PRODUTO_ATIVO,1)=1");
-                
 
-                $produto = $cmd->fetch(PDO::FETCH_NUM);                
+
+                $produto = $cmd->fetch(PDO::FETCH_NUM);
 
                 while ($linha = $cmd->fetch()) {
                 ?>
@@ -273,9 +274,9 @@
                         </td>
                         <td>
                             <a href="<?php
-                            echo $linha["IMAGEM_URL"];
-                            ?>"> Imagens </a>                            
-                        </td>                      
+                                        echo $linha["IMAGEM_URL"];
+                                        ?>"> Imagens </a>
+                        </td>
                         <td>
                             <a href="atualizarPRODUTO.php?id=<?php echo $linha["PRODUTO_ID"] ?>">Atualizar</a>
                         </td>
