@@ -1,5 +1,8 @@
-<link rel="icon" type="image/x-icon" href="../imagens/logoBravo.png">
-<title>Bravo4Fun</title>
+<head>
+    <link rel="icon" type="image/x-icon" href="../imagens/logoBravo.png">
+    <title>Bravo4Fun</title>
+</head>
+
 <section class="cadastre-se">
     <div class="d-grid gap-2 inscreva">
         <h1> Cadastrar nova categoria </h1>

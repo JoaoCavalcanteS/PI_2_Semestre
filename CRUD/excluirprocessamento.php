@@ -1,6 +1,7 @@
 <html>
     <head>
-        <title>Processamento de Exclusao de Administrador</title>
+    <link rel="icon" type="image/x-icon" href="../imagens/logoBravo.png">
+    <title>Bravo4Fun</title>
     </head>
     <body>
         <h1>Processamento de Exclusao de Administrador</h1>

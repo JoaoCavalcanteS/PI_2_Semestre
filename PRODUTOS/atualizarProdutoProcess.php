@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <h1>Atualização de Produtos</h1>
+    <h1>Atualizar Eventos</h1>
 
 
     <?php
