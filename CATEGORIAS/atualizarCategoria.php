@@ -42,7 +42,8 @@
     //Executa o comando e verifica se teve sucesso
     $status = $cmd->execute();
     if ($status) {
-        echo "<script>Alert('Categoria/descrição atualizadas')</script>";
+        header("Location:listaCategoria.php");
+        echo "<script>Alert('Categoria atualizadas')</script>";
     } else {
         echo "<script>Alert('Erro')</script>";
     }

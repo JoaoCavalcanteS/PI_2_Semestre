@@ -130,7 +130,7 @@
         <h1> Login </h1>
         <form action="autenticacao.php" method="post">
             <div class="login">
-                <input autocomplete="off" type="text" required name="email">
+                <input autocomplete='off' type="text" required name="email">
                 <span></span>
                 <label>E-mail</label>
             </div>

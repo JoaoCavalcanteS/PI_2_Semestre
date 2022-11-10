@@ -6,7 +6,7 @@
     <body>
         <h1>Processamento de exclusao de categoria</h1>
         <br>
-            <p>Categoria excluido!</p>
+            <p>Categoria Ocultada!</p>
         <br>
 
         <?php            
@@ -34,10 +34,12 @@
             //executa o comando e verifica se teve sucesso
             $status = $cmd->execute();
             if($status){
-                echo "exclusão do produto com sucesso";
+                echo "<script> confirm('Produto Ocultado!'); </script>";
+                header("Location: listaProdutos.php");
             }
             else{
-                echo "ocorreu um erro ao excluir";
+                echo "<script>confirm('Ocorreu um erro ao ocultar categoria!'); </script>";
+                header("Location: ExcluirProdutos.php");
             }
         ?>
         <a href="listaProdutos.php">Voltar para a lista de categorias</a>

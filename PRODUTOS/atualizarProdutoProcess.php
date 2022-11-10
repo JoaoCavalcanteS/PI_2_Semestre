@@ -36,9 +36,11 @@
     //Executa o comando e verifica se teve sucesso
     $status = $cmd->execute();
     if ($status) {
-        echo "<script>Alert('Produtos atualizados')</script>";
+        echo "<script>confirm('Evento Atualizado!');</script>";
+        header("Location: listaProdutos.php");
     } else {
-        echo "<script>Alert('Erro')</script>";
+        echo "<script>confirm('Erro ao atualizar!');</script>";
+        header("Location: atualizarProduto.php");
     }
 
     ?>

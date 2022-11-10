@@ -31,9 +31,11 @@ $cmd = $pdo->prepare($cmdtext);
 //Executa o comando e verifica se teve sucesso
 $status = $cmd->execute();
 if($status){
-    echo "Adm criado com sucesso";
+    echo "<script> confirm('Administrador inserido!'); </script>";
+    header("Location: listaradmins.php");
 }
 else{
-    echo "Erro ao inserir";
+    echo "<script> confirm('Erro ao Inserir!'); </script>";
+    header("Location: cadastroAdm.php");
 }
 ?>

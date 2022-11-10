@@ -21,26 +21,37 @@
 
 
 <?php
+//Dados para conexao ao MySQL
+
+$mysqlhostname = "144.22.244.104";
+$mysqlport = "3306";
+$mysqlusername = "Bravo4Fun";
+$mysqlpassword = "Bravo4Fun";
+$mysqldatabase = "Bravo4Fun";
+
+//mostra string de conexao ao MySql
+$dsn = 'mysql:host=' . $mysqlhostname . ";dbname=" . $mysqldatabase . ';port=' . $mysqlport;
+$pdo = new PDO($dsn, $mysqlusername, $mysqlpassword);
+
 
 //Captura os valores das variaveis
 $nome = $_POST["nome"];
 $preco = $_POST["preco"];
-$precoInt = intval($preco);
 $desc = $_POST["desc"];
 $descont = $_POST["descont"];
-$descontInt = intval($descont);
 $categoria = $_POST["cat"];
-$categoriaInt = intval($categoria);
+$produtoA = True;
 
 //Monta o comando de inserção
-$cmdtext = "INSERT INTO PRODUTO(PRODUTO_NOME, PRODUTO_DESC, PRODUTO_PRECO, PRODUTO_DESCONTO, CATEGORIA_ID, PRODUTO_ATIVO ) VALUES('" . $nome . "','" . $desc . "'," . $precoInt . "," . $descontInt . "," . $categoria . ",1)";
+
+$cmdtext = "INSERT INTO PRODUTO(PRODUTO_NOME, PRODUTO_DESC, PRODUTO_PRECO, PRODUTO_DESCONTO, CATEGORIA_ID, PRODUTO_ATIVO ) VALUES('" . $nome . "','" . $desc . "'," . $preco . "," . $descont . "," . $categoria . ",1)";
 $cmd = $pdo->prepare($cmdtext);
 
 //Executa o comando e verifica se teve sucesso
 $status = $cmd->execute();
 if ($status) {
-    echo "Produto criado com sucesso";
+    echo "<script> confirm('Evento inserido !'); </script>";
 } else {
-    echo "Erro ao inserir";
+    echo "<script> confirm('Erro ao inserir!'); </script>";   
 }
 ?>

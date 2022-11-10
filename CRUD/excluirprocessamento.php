@@ -6,7 +6,7 @@
     <body>
         <h1>Processamento de Exclusao de Administrador</h1>
         <br>
-            <p>usuario excluido!</p>
+            <p>usuario Ocultado?</p>
         <br>
 
         <?php            
@@ -25,10 +25,12 @@
             //executa o comando e verifica se teve sucesso
             $status = $cmd->execute();
             if($status){
-                echo "exclusão com sucesso";
+                echo "<script> confirm('Administrador, ocultado!'); </script>";
+                header("Location: listaradmins.php");          
             }
             else{
-                echo "ocorreu um erro ao excluir";
+                echo "<script>confirm(Erro ao ocultar admin!'); </script>";
+                header("Location: listaradmins.php");          
             }
         ?>
         <a href="listaradmins.php">Voltar para a Pagina de Lista</a>

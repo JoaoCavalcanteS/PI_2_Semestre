@@ -33,11 +33,13 @@
                 //Executa o comando e verifica se teve sucesso
                 $status = $cmd->execute();
                 if($status){
-                    echo "<script>Alert('Adm criado com sucesso')</script>";
+                    echo "<script> confirm('Administrador atualizado!'); </script>";
+                    header("Location: listaradmins.php");
                 }
                 else
                 {
-                    echo "<script>Alert('Erro')</script>";
+                    echo "<script> confirm('Erro ao atualizar Admin!'); </script>";
+                    header("Location: atulizaradmin.php");
                 }     
                 
             ?>

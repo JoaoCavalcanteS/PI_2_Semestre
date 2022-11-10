@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+    <!-- <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet"> -->
     <link rel="icon" type="image/x-icon" href="../imagens/logoBravo.png">
     <title>Bravo4Fun</title>
 </head>
@@ -99,7 +99,7 @@
         width: 100%;
     }
 
-    input[type="submit"] {
+    input[type="submit"], input[type="button"] {
         width: 100%;
         height: 50px;
         border: 1px solid;
@@ -113,7 +113,7 @@
         margin: 25px 0;
     }
 
-    input[type="submit"]:hover {
+    input[type="submit"], input[type="button"]:hover {
         border-color: #126E82;
         transition: .5s;
     }
@@ -199,7 +199,7 @@
                     <ul class="links">
                         <li><a href="login.php">Login</a></li>
                         <li><a href="CadastroAdm.php">Cadastro</a></li>
-                        <li><a href="../PRODUTOS/cadastroDeProdutos.php">Cadastro de Produtos</a></li>
+                        <li><a href="../PRODUTOS/cadastroDeProdutos.php">Cadastro de Eventos</a></li>
                         <li><a href="listaradmins.php">Lista ADM</a></li>
                         <li><a href="../CATEGORIAS/listaCategoria.php">Categoria</a></li>
                         <li><a href="../PRODUTOS/listaProdutos.php">Eventos</a></li>
@@ -225,9 +225,9 @@
                 <label>Senha</label>
             </div>
             <input type="submit" value="Cadastrar">
+            <a href="listaradmins.php"><input type="button" value="Voltar"></a>
         </form>
-    </div>
-    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    </div>    
 </body>
 
 </html>

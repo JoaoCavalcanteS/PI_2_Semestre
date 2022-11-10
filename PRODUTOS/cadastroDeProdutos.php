@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+    <!-- <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet"> -->
     <link rel="icon" type="image/x-icon" href="../imagens/logoBravo.png">
     <title>Bravo4Fun</title>
 </head>
@@ -215,6 +215,48 @@
     .barra-pesquisa input::placeholder {
         color: white;
     }
+
+    select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        outline: 0;
+        box-shadow: none;
+        border: 1px solid red;
+        background: black;
+        color: #126E82;
+    }
+
+    select::-ms-expand {
+        display: none;
+    }
+
+    .select {
+        position: relative;
+        display: flex;
+        width: 20em;
+        height: 3em;
+        background: black;
+        line-height: 3;
+
+    }
+
+    select {
+        flex: 1;
+        padding: 0 .5em;
+        color: #126E82;
+        cursor: pointer;
+    }
+
+    .select::after {
+        content: \25BC;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 0 1em;
+        background: red;
+        cursor: pointer;
+    }
 </style>
 
 <body>
@@ -226,7 +268,7 @@
                     <ul class="links">
                         <li><a href="../CRUD/login.php">Login</a></li>
                         <li><a href="../CRUD/CadastroAdm.php">Cadastro</a></li>
-                        <li><a href="cadastroDeProdutos.php">Cadastro de Produtos</a></li>
+                        <li><a href="..cadastroDeProdutos.php">Cadastro de Eventos</a></li>
                         <li><a href="../CRUD/listaradmins.php">Lista ADM</a></li>
                         <li><a href="../CATEGORIAS/listaCategoria.php">Categoria</a></li>
                         <li><a href="listaProdutos.php">Eventos</a></li>
@@ -237,11 +279,10 @@
     </header>
     <div class="cadastrar-se">
         <div class="d-grid gap-2 inscreva">
-            <h1> Cadastro de Produto </h1>
+            <h1> Cadastro de Evento </h1>
             <form action="CriarProduto.php" method="POST">
                 <div class="cadastro">
-                    <input type="text" required name="nome">
-                    <span>Atualizar</span>
+                    <input type="text" required name="nome">                    
                     <label>Nome</label>
                 </div>
                 <div class="cadastro">
@@ -257,25 +298,28 @@
                     <label>Desconto:</label>
                 </div>
                 <div>
-                    <input type="hidden" value="<?php echo $_GET["id"] ?>" name="cat">
-                    <select name="cat" id="CATEGORIA_ID" required>
-                        <option>Categoria</option>
-                        <?php
+                    <div class="selec">                    
 
-                        require_once '../BD/database.php';
+                        <select name="cat" required>
+                            <option selected disabled>Escolha uma categoria</option>
+                            <?php
 
-                        $stmt = $pdo->prepare("SELECT * FROM CATEGORIA");
-                        $stmt->execute();
+                            require_once '../BD/database.php';
 
-                        if ($stmt->rowCount() > 0) {
-                            while ($dados = $stmt->fetch(pdo::FETCH_ASSOC)) {
-                                echo "<option value='{$dados['CATEGORIA_ID']}'>{$dados['CATEGORIA_NOME']}</option>";
+                            $stmt = $pdo->prepare("SELECT * FROM CATEGORIA");
+                            $stmt->execute();
+
+                            if ($stmt->rowCount() > 0) {
+                                while ($dados = $stmt->fetch(pdo::FETCH_ASSOC)) {
+                                    echo "<option value='{$dados['CATEGORIA_ID']}'>{$dados['CATEGORIA_NOME']}</option>";
+                                }
                             }
-                        }
-                        ?>
-                    </select>
+                            ?>
+                        </select>
+                    </div>
                 </div>
                 <input type="submit" value="Cadastrar">
+                <a href="../PRODUTOS/listaProdutos.php"><input type="button" value="Voltar"></a>
             </form>
         </div>
 </body>

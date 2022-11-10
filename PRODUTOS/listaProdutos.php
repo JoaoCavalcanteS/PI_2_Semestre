@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="ListadeAdmin.css">
     <link rel="icon" type="image/x-icon" href="../imagens/logoBravo.png">
     <title>Bravo4Fun</title>
@@ -185,7 +185,7 @@
                     <ul class="links">
                         <li><a href="../CRUD/login.php">Login</a></li>
                         <li><a href="../CRUD/CadastroAdm.php">Cadastro</a></li>
-                        <li><a href="../PRODUTOS/cadastroDeProdutos.php">Cadastro de Produtos</a></li>
+                        <li><a href="../PRODUTOS/cadastroDeProdutos.php">Cadastro de Eventos</a></li>
                         <li><a href="../CRUD/listaradmins.php">Lista ADM</a></li>
                         <li><a href="../CATEGORIAS/listaCategoria.php">Categoria</a></li>
                         <li><a href="../PRODUTOS/listaProdutos.php">Eventos</a></li>
@@ -226,7 +226,7 @@
                 $dsn = 'mysql:host=' . $mysqlhostname . ";dbname=" . $mysqldatabase . ';port=' . $mysqlport;
                 $pdo = new PDO($dsn, $mysqlusername, $mysqlpassword);
 
-                $cmd = $pdo->query("SELECT P.PRODUTO_ID,
+                $cmd = $pdo->query("SELECT DISTINCT P.PRODUTO_ID,
                 P.PRODUTO_NOME,
                 P.PRODUTO_DESC,
                 P.PRODUTO_PRECO,
@@ -234,7 +234,8 @@
                 P.CATEGORIA_ID,
                 IMG.IMAGEM_URL                
                 FROM PRODUTO AS P
-                INNER JOIN PRODUTO_IMAGEM AS IMG ON IMG.PRODUTO_ID = P.PRODUTO_ID WHERE COALESCE(P.PRODUTO_ATIVO,1)=1");
+                INNER JOIN PRODUTO_IMAGEM AS IMG ON IMG.PRODUTO_ID = P.PRODUTO_ID
+                WHERE P.PRODUTO_ATIVO <> 0 ORDER BY P.PRODUTO_ID ");
 
 
                 $produto = $cmd->fetch(PDO::FETCH_NUM);

@@ -19,7 +19,7 @@
 
     .cadastrar-se {
         position: absolute;
-        top: 77%;
+        top: 60%;
         left: 50%;
         transform: translate(-50%, -50%);
         width: 400px;
@@ -132,7 +132,7 @@
     .logo {
         position: absolute;
         top: -4%;
-        left: 41%;
+        left: 43%;
         max-width: 300px;
         max-height: 300px;
         width: auto;

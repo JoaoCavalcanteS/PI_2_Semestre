@@ -94,10 +94,10 @@
 
     //Se a retorna for vazio (0), então a senha ou email estão incorretos
     if (count($admin) == 0) {
-
         echo "<script> confirm('Email ou senha invalido!'); </script>";
+        header("Location: login.php");
     } else {
-
+        
         header("Location: menu.php");
     }
 
