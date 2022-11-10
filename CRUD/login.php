@@ -130,12 +130,12 @@
         <h1> Login </h1>
         <form action="autenticacao.php" method="post">
             <div class="login">
-                <input type="text" required name="email">
+                <input autocomplete="off" type="text" required name="email">
                 <span></span>
                 <label>E-mail</label>
             </div>
             <div class="login">
-                <input type="password" required aria-label="Senha" name="senha">
+                <input autocomplete="off" type="password" required aria-label="Senha" name="senha">
                 <label>Senha</label>
             </div>
             <input type="submit" class="botao01" value="Entrar">
