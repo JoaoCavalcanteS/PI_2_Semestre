@@ -268,7 +268,8 @@
                     <ul class="links">
                         <li><a href="../CRUD/login.php">Login</a></li>
                         <li><a href="../CRUD/CadastroAdm.php">Cadastro</a></li>
-                        <li><a href="..cadastroDeProdutos.php">Cadastro de Eventos</a></li>
+                        <li><a href="../PRODUTOS/cadastroDeProdutos.php">Cadastro de Eventos</a></li>
+                        <li><a href="../CATEGORIAS/cadastrarCategoria.php">Cadastro de Categorias</a></li>
                         <li><a href="../CRUD/listaradmins.php">Lista ADM</a></li>
                         <li><a href="../CATEGORIAS/listaCategoria.php">Categoria</a></li>
                         <li><a href="listaProdutos.php">Eventos</a></li>
@@ -295,7 +296,7 @@
                 </div>
                 <div class="cadastro">
                     <input type="text" required name="descont">
-                    <label>Desconto:</label>
+                    <label>Desconto %:</label>
                 </div>
                 <div>
                     <div class="selec">                    
@@ -316,7 +317,18 @@
                             }
                             ?>
                         </select>
+                        
                     </div>
+                    <div class="cadastro">
+                    <form method="post" action="upload.php" enctype="multipart/form-data">
+                    <br>
+                    Selecione a imagem : 
+                    <input type="file" name="imagem">
+                    <p>
+                    <input type="submit" value="Enviar">
+                </form>
+                    <label>Imagem</label>
+                </div>
                 </div>
                 <input type="submit" value="Cadastrar">
                 <a href="../PRODUTOS/listaProdutos.php"><input type="button" value="Voltar"></a>
