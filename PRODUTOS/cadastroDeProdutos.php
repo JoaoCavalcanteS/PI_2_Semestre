@@ -320,19 +320,28 @@
                         
                     </div>
                     <div class="cadastro">
-                    <form method="post" action="upload.php" enctype="multipart/form-data">
-                    <br>
-                    Selecione a imagem : 
-                    <input type="file" name="imagem">
-                    <p>
-                    <input type="submit" value="Enviar">
-                </form>
-                    <label>Imagem</label>
-                </div>
-                </div>
-                <input type="submit" value="Cadastrar">
-                <a href="../PRODUTOS/listaProdutos.php"><input type="button" value="Voltar"></a>
-            </form>
+                    <form id="contact" action="atualizarimagem.php" method="POST" enctype="multipart/form-data">
+
+                        <fieldset>
+                            <label for="">Ordem da Imagem:</label>
+                            <input placeholder="Ordem da imagem" type="number" step="1" min="1" max="3" name="IMAGEM_ORDEM" id="IMAGEM_ORDEM" tabindex="1"  required>  
+                            <br>        
+                            <!-- <input type="text" name ="<;?php echo $id ?>" value = "<;?php echo $id ?>" readonly="readonly"> -->
+
+                            <input type="hidden" value="<?php echo $_GET["id"]?>" name="id">
+                            <br>
+                            
+                            
+                        
+                        
+                            <input type="file" name="imagem" required>
+                        </fieldset>
+
+                        <fieldset>
+                            <a href="atualizarimagem.php"><button class="btn btn-secondary btn-sm">Cadastrar</button>
+                            <!-- <a href="teste.php?id=<p echo $linha["IMAGEM_ID"] ?>"><button class="btn btn-secondary btn-sm">Atualizar</button></a> -->
+
+                        </fieldset>
         </div>
 </body>
 
