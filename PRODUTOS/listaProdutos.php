@@ -227,7 +227,7 @@
                 $dsn = 'mysql:host=' . $mysqlhostname . ";dbname=" . $mysqldatabase . ';port=' . $mysqlport;
                 $pdo = new PDO($dsn, $mysqlusername, $mysqlpassword);
 
-                $cmd = $pdo->query("SELECT DISTINCT P.PRODUTO_ID,
+                $cmd = $pdo->query("SELECT P.PRODUTO_ID,
                 P.PRODUTO_NOME,
                 P.PRODUTO_DESC,
                 P.PRODUTO_PRECO,
@@ -235,8 +235,8 @@
                 P.CATEGORIA_ID,
                 IMG.IMAGEM_URL                
                 FROM PRODUTO AS P
-                INNER JOIN PRODUTO_IMAGEM AS IMG ON IMG.PRODUTO_ID = P.PRODUTO_ID
-                WHERE P.PRODUTO_ATIVO <> 0 ORDER BY P.PRODUTO_ID ");
+                LEFT JOIN PRODUTO_IMAGEM AS IMG ON IMG.PRODUTO_ID = P.PRODUTO_ID
+                WHERE P.PRODUTO_ATIVO = 1 ORDER BY P.PRODUTO_ID ");
 
 
                 $produto = $cmd->fetch(PDO::FETCH_NUM);

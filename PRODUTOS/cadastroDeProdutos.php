@@ -317,8 +317,10 @@
                             }
                             ?>
                         </select>
-                <button type="submit" value="Enviar" class="btn btn-outline-danger">Cadastrar</button>
-            </form>
+                        </div>                  
+            <input type="submit" value="Cadastrar">    
+        </form>
+    </div>
 </body>
 
 </html>
