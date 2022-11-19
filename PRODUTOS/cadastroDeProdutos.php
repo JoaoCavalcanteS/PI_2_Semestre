@@ -8,6 +8,9 @@
     <!-- <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet"> -->
     <link rel="icon" type="image/x-icon" href="../imagens/logoBravo.png">
     <title>Bravo4Fun</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <style>
     * {
@@ -317,10 +320,46 @@
                             }
                             ?>
                         </select>
+<<<<<<< Updated upstream
                         </div>                  
             <input type="submit" value="Cadastrar">    
         </form>
     </div>
+=======
+                        
+                    </div>
+                    <div class="cadastro">
+                    <form id="contact" action="atualizarimagem.php" method="POST" enctype="multipart/form-data">
+
+                        <fieldset>
+                            <label for="">Ordem da Imagem:</label>
+                            <input placeholder="Ordem da imagem" type="number" step="1" min="1" max="3" name="IMAGEM_ORDEM" id="IMAGEM_ORDEM" tabindex="1"  required>  
+                            <br>        
+                            <!-- <input type="text" name ="<;?php echo $id ?>" value = "<;?php echo $id ?>" readonly="readonly"> -->
+
+                            <input type="hidden" value="<?php
+                            require_once '../BD/database.php';
+
+
+                            
+                            
+                                                            echo $_GET["id"]?>" name="id">
+                            <br>
+                            
+                            
+                        
+                        
+                            <input type="file" name="imagem" required>
+                        </fieldset>
+
+                        <fieldset>
+                        <button type="submit" value="Enviar" class="btn btn-outline-danger">Cadastrar</button>
+                            <!-- <a href="teste.php?id=<p echo $linha["IMAGEM_ID"] ?>"><button class="btn btn-secondary btn-sm">Atualizar</button></a> -->
+
+                        </fieldset>
+                    </div>
+        </div>
+>>>>>>> Stashed changes
 </body>
 
 </html>

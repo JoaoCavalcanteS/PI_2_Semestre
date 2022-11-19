@@ -13,26 +13,6 @@
 
 <body>
 
-<nav>
-        <ul>
-            <li>
-                <a href="administradores.php">
-                    Administradores
-                </a>
-            </li>
-
-            <li><a href="listarcategorias.php">Categorias</a></li>
-            
-            <li><a href="listarprodutos.php">Produtos</a></li>
-
-            <li><a href="listarimagem.php">Cadastrar imagem</a></li>
-
-            <li><a href="listarestoque.php">Estoque</a></li>
-            
-            <li><a href="logout.php">Sair</a></li>
-        </ul>
-    </nav>
-
         <h1>Atualizar imagem</h1>
 
         <?php
