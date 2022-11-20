@@ -184,6 +184,7 @@
                         <li><a href="../CRUD/login.php">Login</a></li>
                         <li><a href="../CRUD/CadastroAdm.php">Cadastro</a></li>
                         <li><a href="../PRODUTOS/cadastroDeProdutos.php">Cadastro de Eventos</a></li>
+                        <li><a href="../imgProduto/cadastroImagem.php">Cadastro de Imagens</a></li>
                         <li><a href="../CATEGORIAS/cadastrarCategoria.php">Cadastro de Categorias</a></li>
                         <li><a href="../CRUD/listaradmins.php">Lista ADM</a></li>
                         <li><a href="../CATEGORIAS/listaCategoria.php">Categoria</a></li>

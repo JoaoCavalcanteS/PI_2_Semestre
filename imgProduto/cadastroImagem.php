@@ -284,45 +284,34 @@
     </header>
     <div class="cadastrar-se">
         <div class="d-grid gap-2 inscreva">
-            <h1> Cadastro de Evento </h1>
-            <form action="CriarProduto.php" method="POST">
-                <div class="cadastro">
-                    <input type="text" required name="nome">                    
-                    <label>Nome</label>
-                </div>
-                <div class="cadastro">
-                    <input type="text" required name="preco">
-                    <label>Preço</label>
-                </div>
-                <div class="cadastro">
-                    <input type="text" required name="desc">
-                    <label>Descrição:</label>
-                </div>
-                <div class="cadastro">
-                    <input type="text" required name="descont">
-                    <label>Desconto %:</label>
-                </div>
-                <div>
-                    <div class="selec">                    
+            <h1> Cadastro de Imagens </h1>
+            <form action="uploud.php" method="POST">
 
-                        <select name="cat" required>
-                            <option selected disabled>Escolha uma categoria</option>
+                        <select name="produto" required>
+                            <option selected disabled>Escolha um filme</option>
                             <?php
 
                             require_once '../BD/database.php';
 
-                            $stmt = $pdo->prepare("SELECT * FROM CATEGORIA");
+                            $stmt = $pdo->prepare("SELECT * FROM PRODUTO");
                             $stmt->execute();
 
                             if ($stmt->rowCount() > 0) {
                                 while ($dados = $stmt->fetch(pdo::FETCH_ASSOC)) {
-                                    echo "<option value='{$dados['CATEGORIA_ID']}'>{$dados['CATEGORIA_NOME']}</option>";
+                                    echo "<option value='{$dados['PRODUTO_ID']}'>{$dados['PRODUTO_NOME']}</option>";
                                 }
                             }
                             ?>
                         </select>
-
-                        </div>                  
+                        <span >
+                            <input placeholder="Ordem da imagem" type="number" step="1" min="1" max="3" name="IMAGEM_ORDEM" id="IMAGEM_ORDEM" tabindex="1"  required> 
+                        </span> 
+                        Selecione a imagem : 
+                    <input type="file" name="imagem">
+                
+                        </div>  
+                            
+                        
             <input type="submit" value="Cadastrar">    
         </form>
     </div>
