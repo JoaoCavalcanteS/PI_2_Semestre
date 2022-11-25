@@ -285,9 +285,9 @@
     <div class="cadastrar-se">
         <div class="d-grid gap-2 inscreva">
             <h1> Cadastro de Imagens </h1>
-            <form action="uploud.php" method="POST">
+            <form action="uploud.php" method="POST" enctype="multipart/form-data">
 
-                        <select name="produto" required>
+                        <select name="PRODUTO_ID" required>
                             <option selected disabled>Escolha um filme</option>
                             <?php
 
@@ -307,11 +307,8 @@
                             <input placeholder="Ordem da imagem" type="number" step="1" min="1" max="3" name="IMAGEM_ORDEM" id="IMAGEM_ORDEM" tabindex="1"  required> 
                         </span> 
                         Selecione a imagem : 
-                    <input type="file" name="imagem">
-                
-                        </div>  
-                            
-                        
+                        <input type="file" name="imagem" required>
+                          
             <input type="submit" value="Cadastrar">    
         </form>
     </div>

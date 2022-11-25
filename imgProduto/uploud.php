@@ -7,10 +7,15 @@
     <Body>
         <h1>Veja a imagem</h1>
     <?php 
-//
+
+require_once '../BD/database.php';
+
+$ordem = $_POST['IMAGEM_ORDEM'];            
+$produto = $_POST['PRODUTO_ID'];
 // Coloque aqui a chave do Serviço
 //
-$IMGUR_CLIENT_ID = "";
+$IMGUR_CLIENT_ID = "52ff310ba217f07";
+//Client secret::db6c06999faec9d3ec0a0a6f2ac986d1be2fdb75
   
 //
 // Se nao nenhum arquivo for selecionado, entao informa que precisa selecionar um 
@@ -83,7 +88,10 @@ $IMGUR_CLIENT_ID = "";
     //
     if(!empty($responseArr->data->link)){ 
         //AQUI VOCE VAI INSERRIR NO BANCO O LINK ABAIXO
-
+        $cmdtext = "INSERT INTO PRODUTO_IMAGEM(IMAGEM_ORDEM, PRODUTO_ID, IMAGEM_URL ) VALUES(" . $ordem . "," . $produto . ",'" .  $responseArr->data->link . "')";
+        
+        $cmd = $pdo->prepare($cmdtext);
+        $status = $cmd->execute();
         // $responseArr->data->link retorna o Link da imagem
         // Exibe a imagem
         echo '<img src="' . $responseArr->data->link . '"</>';
@@ -113,8 +121,11 @@ $IMGUR_CLIENT_ID = "";
         </script>
 
         <p>
+
         <input type="button" onclick="exibirJson()" value="Clique para exibir o json">
+        <a href="../PRODUTOS/listaProdutos.php">Voltar para a lista de produtos</a>
 
         <pre id="json"></pre>
+
     </Body>
 </Html>       
