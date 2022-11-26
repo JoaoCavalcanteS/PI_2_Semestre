@@ -97,16 +97,6 @@ if(!empty($responseArr->data->link)){
 
 
 
-
-
-
-
-
-
-
-
-
-
 $link =  $responseArr->data->link;
 
 

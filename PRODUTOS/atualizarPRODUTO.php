@@ -170,30 +170,29 @@
         $precoInt = $admin["PRODUTO_PRECO"];
         $desc = $admin["PRODUTO_DESC"];
         $descont = $admin["PRODUTO_DESCONTO"];
-        $categoria = $admin["PRODUTO_ID"];
+        $categoria = $admin["CATEGORIA_ID"];
 
 
 
         ?>
         <form action="atualizarProdutoProcess.php?id=<?php echo $id ?>" method="POST">
             <div class="cadastro">
-                <input type="text" name="id" value="<?php echo $id ?> ">
-                <label>ID</label>
+                <input type="text" name="id" disabled='true' value="<?php echo "ID:".$id; ?> "> 
             </div>
             <div class="cadastro">
-                <input type="text" name="nome" value="<?php echo $nome ?> ">
+                <input type="text" name="nome" required value="<?php echo $nome ?> ">
                 <label>Nome</label>
             </div>
             <div class="cadastro">
-                <input type="text" name="preco" value="<?php echo $precoInt ?> ">
+                <input type="text" name="preco" required value="<?php echo $precoInt ?> ">
                 <label>Preço</label>
             </div>
             <div class="cadastro">
-                <input type="text" name="descricao" value="<?php echo $desc ?> ">
+                <input type="text" name="descricao" required value="<?php echo $desc ?> ">
                 <label>Descrição</label>
             </div>
             <div class="cadastro">
-                <input type="text" name="desconto" value="<?php echo $descont ?> ">
+                <input type="text" name="desconto" required value="<?php echo $descont ?> ">
                 <label>Desconto</label>
             </div>
             <select name="cat" id="CATEGORIA_ID" required>
@@ -207,13 +206,17 @@
 
                 if ($stmt->rowCount() > 0) {
                     while ($dados = $stmt->fetch(pdo::FETCH_ASSOC)) {
-                        echo "<option value='{$dados['CATEGORIA_ID']}'>{$dados['CATEGORIA_NOME']}</option>";
+
+                        $strSelected = $dados['CATEGORIA_ID'] == $categoria ? 'selected' : '';
+
+                        echo "<option value='{$dados['CATEGORIA_ID']}' $strSelected>{$dados['CATEGORIA_NOME']}</option>";
                     }
                 }
                 ?>
             </select>
             <input type="submit" value="Atualizar">
             <a href="../PRODUTOS/listaProdutos.php"><input type="button" value="Voltar"></a>
+            <span><a href="../imgProduto/atualizarImagem.php"><input type="button" value="Atualizar imagem"></a></span>
         </form>
     </div>
 </body>

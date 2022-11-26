@@ -26,7 +26,7 @@ $id = $_GET["id"];
 $admin = $pdo->query("SELECT * FROM PRODUTO_IMAGEM WHERE IMAGEM_ID=" . $id)->fetch();
 
 $ordem = $admin["IMAGEM_ORDEM"];
-$produto_id = $admin["PRODUTO_ID"];
+$produto = $admin["PRODUTO_ID"];
 
     
 
