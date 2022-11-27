@@ -216,7 +216,7 @@
             </select>
             <input type="submit" value="Atualizar">
             <a href="../PRODUTOS/listaProdutos.php"><input type="button" value="Voltar"></a>
-            <span><a href="../imgProduto/atualizarImagem.php"><input type="button" value="Atualizar imagem"></a></span>
+        
         </form>
     </div>
 </body>

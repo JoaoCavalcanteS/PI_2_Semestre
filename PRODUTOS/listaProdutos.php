@@ -212,21 +212,14 @@
                         <th>Desconto</th>
                         <th>Categoria</th>
                         <th>Cartaz</th>
-                        <th>Atualização</th>
+                        <th>Atualizar-Produto</th>
+                        <th>Atualizar-Imagem</th>
                         <th>Ocultar</th>
                     </tr>
                 </thead>
 
                 <?php
-                $mysqlhostname = "144.22.244.104";
-                $mysqlport = "3306";
-                $mysqlusername = "Bravo4Fun";
-                $mysqlpassword = "Bravo4Fun";
-                $mysqldatabase = "Bravo4Fun";
-
-                //mostra string de conexao ao MySql
-                $dsn = 'mysql:host=' . $mysqlhostname . ";dbname=" . $mysqldatabase . ';port=' . $mysqlport;
-                $pdo = new PDO($dsn, $mysqlusername, $mysqlpassword);
+                require_once '../BD/database.php';
 
                 $cmd = $pdo->query("SELECT P.PRODUTO_ID,
                 P.PRODUTO_NOME,
@@ -283,6 +276,9 @@
                         </td>
                         <td>
                             <a href="atualizarPRODUTO.php?id=<?php echo $linha["PRODUTO_ID"] ?>">Atualizar</a>
+                        </td>
+                        <td>
+                            <a href="atualizarImagem.php?id=<?php echo $linha["PRODUTO_ID"] ?>">Atualizar</a> 
                         </td>
                         <td>
                             <a href="ExcluirProdutos.php?id=<?php echo $linha["PRODUTO_ID"] ?>">Ocultar</a>
