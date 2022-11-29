@@ -16,6 +16,7 @@ $produto = $_POST['PRODUTO_ID'];
 //
 $IMGUR_CLIENT_ID = "52ff310ba217f07";
 //Client secret::db6c06999faec9d3ec0a0a6f2ac986d1be2fdb75
+//52ff310ba217f07
   
 //
 // Se nao nenhum arquivo for selecionado, entao informa que precisa selecionar um 

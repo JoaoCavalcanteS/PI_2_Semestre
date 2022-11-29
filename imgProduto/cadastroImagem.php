@@ -272,7 +272,7 @@
                         <li><a href="../CRUD/login.php">Login</a></li>
                         <li><a href="../CRUD/CadastroAdm.php">Cadastro</a></li>
                         <li><a href="../PRODUTOS/cadastroDeProdutos.php">Cadastro de Eventos</a></li>
-                        <li><a href="../imgProduto/cadastroImagem.php">Cadastro de Imagens</a></li>
+                        <li><a href="../imgProduto/cadastroImagem.php">Cadastro de Cartaz</a></li>
                         <li><a href="../CATEGORIAS/cadastrarCategoria.php">Cadastro de Categorias</a></li>
                         <li><a href="../CRUD/listaradmins.php">Lista ADM</a></li>
                         <li><a href="../CATEGORIAS/listaCategoria.php">Categoria</a></li>
@@ -284,7 +284,7 @@
     </header>
     <div class="cadastrar-se">
         <div class="d-grid gap-2 inscreva">
-            <h1> Cadastro de Imagens </h1>
+            <h1> Cadastro de Cartaz </h1>
             <form action="uploud.php" method="POST" enctype="multipart/form-data">
 
                         <select name="PRODUTO_ID" required>
@@ -293,7 +293,7 @@
 
                             require_once '../BD/database.php';
 
-                            $stmt = $pdo->prepare("SELECT * FROM PRODUTO");
+                            $stmt = $pdo->prepare("SELECT * FROM PRODUTO WHERE PRODUTO_ATIVO=1");
                             $stmt->execute();
 
                             if ($stmt->rowCount() > 0) {

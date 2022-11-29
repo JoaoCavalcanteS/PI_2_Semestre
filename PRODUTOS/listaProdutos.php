@@ -229,9 +229,10 @@
                 P.CATEGORIA_ID,
                 IMG.IMAGEM_URL                
                 FROM PRODUTO AS P
-                LEFT JOIN PRODUTO_IMAGEM AS IMG ON IMG.PRODUTO_ID = P.PRODUTO_ID AND IMG.IMAGEM_ORDEM=1
-                WHERE P.PRODUTO_ATIVO = 1 
-                ORDER BY P.PRODUTO_ID ");
+                LEFT JOIN PRODUTO_IMAGEM AS IMG
+                ON IMG.PRODUTO_ID = P.PRODUTO_ID  
+                WHERE P.PRODUTO_ATIVO = 1
+                ORDER BY P.PRODUTO_ID");
 
 
                 $produto = $cmd->fetch(PDO::FETCH_NUM);

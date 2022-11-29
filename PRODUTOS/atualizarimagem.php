@@ -1,3 +1,14 @@
+<?php
+
+$id = $_GET["id"];
+
+
+        // $admin = $pdo->Query("SELECT * FROM PRODUTO WHERE PRODUTO_ID=" . $id)->fetch();
+
+        // $nome = $admin["PRODUTO_NOME"];
+        
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -300,21 +311,22 @@
         <div class="carousel-inner">
             <div class="carousel-item active">
             <img class="d-block w-100" src="<?php 
-                require_once '../BD/database.php';
-                $id = $_GET["id"];
-
-                $cmd = $pdo->query("SELECT 
-                P.PRODUTO_ID,
-                IMG.IMAGEM_URL                
-                FROM PRODUTO AS P 
-                LEFT JOIN PRODUTO_IMAGEM AS IMG ON IMG.PRODUTO_ID = P.PRODUTO_ID AND IMG.IMAGEM_ORDEM=1
-                WHERE P.PRODUTO_ATIVO = 1 AND P.PRODUTO_ID=".$id);
-                
-                while ($linha = $cmd->fetch()) {
-                    ?>
-                    <?php
-                        echo $linha["IMAGEM_URL"];
-                }
+                  require_once '../BD/database.php';
+                  $id = $_GET["id"];
+  
+                  $cmd = $pdo->query("SELECT 
+                  P.PRODUTO_ID,
+                  IMG.IMAGEM_URL                
+                  FROM PRODUTO AS P 
+                  LEFT JOIN PRODUTO_IMAGEM AS IMG ON IMG.PRODUTO_ID = P.PRODUTO_ID AND IMG.IMAGEM_ORDEM=1
+                  WHERE P.PRODUTO_ATIVO = 1 AND P.PRODUTO_ID=.$id
+                  ORDER BY ");
+                  
+                  while ($linha = $cmd->fetch()) {
+                      ?>
+                      <?php
+                          echo $linha["IMAGEM_URL"];
+                  }
             ?>"alt="Primeiro Slide">
             </div>
             <div class="carousel-item">
@@ -327,7 +339,7 @@
                   IMG.IMAGEM_URL                
                   FROM PRODUTO AS P 
                   LEFT JOIN PRODUTO_IMAGEM AS IMG ON IMG.PRODUTO_ID = P.PRODUTO_ID AND IMG.IMAGEM_ORDEM=2
-                  WHERE P.PRODUTO_ATIVO = 1 AND P.PRODUTO_ID=$id");
+                  WHERE P.PRODUTO_ATIVO = 1 AND P.PRODUTO_ID=.$id");
                   
                   while ($linha = $cmd->fetch()) {
                       ?>
@@ -346,7 +358,7 @@
                   IMG.IMAGEM_URL                
                   FROM PRODUTO AS P 
                   LEFT JOIN PRODUTO_IMAGEM AS IMG ON IMG.PRODUTO_ID = P.PRODUTO_ID AND IMG.IMAGEM_ORDEM=3
-                  WHERE P.PRODUTO_ATIVO = 1 AND P.PRODUTO_ID=$id");
+                  WHERE P.PRODUTO_ATIVO = 1 AND P.PRODUTO_ID=.$id");
                   
                   while ($linha = $cmd->fetch()) {
                       ?>
@@ -367,7 +379,7 @@
         </div>
 
         <div class="d-grid gap-2 inscreva">
-            <h1> Atualizar Imagens </h1>
+            <h1> Atualizar Imagens <?php echo "ID:".$id; ?> </h1>
             
             <div class="cadastro">
                 <input placeholder="Ordem da imagem" type="number" step="1" min="1" max="3" name="IMAGEM_ORDEM" id="IMAGEM_ORDEM" tabindex="1"  required>                        
