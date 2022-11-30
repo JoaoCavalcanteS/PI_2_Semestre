@@ -1,33 +1,16 @@
-<?php
-
-$id = $_GET["id"];
-
-
-        // $admin = $pdo->Query("SELECT * FROM PRODUTO WHERE PRODUTO_ID=" . $id)->fetch();
-
-        // $nome = $admin["PRODUTO_NOME"];
-        
-
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
-    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet"> -->
     <link rel="icon" type="image/x-icon" href="../imagens/logoBravo.png">
     <title>Bravo4Fun</title>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </head>
 <style>
     * {
@@ -300,103 +283,55 @@ $id = $_GET["id"];
                 </div>
             </nav>
     </header>
-
     <div class="cadastrar-se">
-    <form action="../imgProduto/atualizarImagens.php?id=<?php echo $id ?>" method="POST" enctype="multipart/form-data">
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-            <img class="d-block w-100" src="<?php 
-                  require_once '../BD/database.php';
-                  $id = $_GET["id"];
-  
-                  $cmd = $pdo->query("SELECT 
-                  P.PRODUTO_ID,
-                  IMG.IMAGEM_URL,
-                  IMG.PRODUTO_ID                
-                  FROM PRODUTO AS P 
-                  LEFT JOIN PRODUTO_IMAGEM AS IMG ON IMG.PRODUTO_ID = P.PRODUTO_ID AND IMG.IMAGEM_ORDEM=1
-                 
-                  ORDER BY IMG.IMAGEM_ID");
-                  
-                  while ($linha = $cmd->fetch()) {
-                      ?>
-                      <?php
-                          echo $linha["IMAGEM_URL"];
-                  }
-            ?>"alt="Primeiro Slide">
-            </div>
-            <div class="carousel-item">
-            <img class="d-block w-100" src="<?php 
-                  require_once '../BD/database.php';
-                  $id = $_GET["id"];
-  
-                  $cmd = $pdo->query("SELECT 
-                  P.PRODUTO_ID,
-                  IMG.IMAGEM_URL                
-                  FROM PRODUTO AS P 
-                  LEFT JOIN PRODUTO_IMAGEM AS IMG ON IMG.PRODUTO_ID = P.PRODUTO_ID AND IMG.IMAGEM_ORDEM=2
-                  ORDER BY IMG.IMAGEM_ID");
-                  
-                  while ($linha = $cmd->fetch()) {
-                      ?>
-                      <?php
-                          echo $linha["IMAGEM_URL"];
-                  }
-            ?>" alt="Segundo Slide">
-            </div>
-            <div class="carousel-item">
-            <img class="d-block w-100" src="<?php 
-                  require_once '../BD/database.php';
-                  $id = $_GET["id"];
-  
-                  $cmd = $pdo->query("SELECT 
-                  P.PRODUTO_ID,
-                  IMG.IMAGEM_URL                
-                  FROM PRODUTO AS P 
-                  LEFT JOIN PRODUTO_IMAGEM AS IMG ON IMG.PRODUTO_ID = P.PRODUTO_ID AND IMG.IMAGEM_ORDEM=3
-                   ORDER BY IMG.IMAGEM_ID");
-                  
-                  while ($linha = $cmd->fetch()) {
-                      ?>
-                      <?php
-                          echo $linha["IMAGEM_URL"];
-                  }
-            ?>" alt="Terceiro Slide">
-            </div>
-        </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Anterior</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Próximo</span>
-        </a>
+        <div class="d-grid gap-2 inscreva">
+            <h1> Cadastro de Estoque </h1>
+            <form action="InserirEstoque.php" method="POST">
+                <label style="color: #126E82;">Nº do Registro</label>
+                <div class="cadastro">
+                    <div>                        
+                        <div class="selec">
+                            <select required name="id">
+                                <option selected disabled> Numeração do Evento</option>
+                                <?php
+
+                                require_once '../BD/database.php';
+
+                                $stmt = $pdo->prepare("SELECT * FROM PRODUTO");
+                                $stmt->execute();
+
+                                if ($stmt->rowCount() > 0) {
+                                    while ($dados = $stmt->fetch(pdo::FETCH_ASSOC)) {
+                                        echo "<option value='{$dados['PRODUTO_ID']}'>{$dados['PRODUTO_ID']}</option>";
+                                    }
+                                }
+                                ?>
+                            </select>
+
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="cadastro">
+                    <input type="text" required name="qtd">
+                    <label>Quantidade Inicial</label>
+                </div>
+                <label style="color: red ;">*** Caso não saiba a numeração do evento em especifico, vá até a tela de lista de Eventos ***</label>
+
+                <input type="submit" value="Cadastrar" onclick="ativar">
+            </form>
         </div>
 
-        <div class="d-grid gap-2 inscreva">
-            <h1> Atualizar Imagens <?php echo "ID:".$id; ?> </h1>
-            <input type="hidden" class="form-control" name="PRODUTO_ID" value="<?php echo $id ?>">
-            <div class="cadastro">
-                <input placeholder="Ordem da imagem" type="number" step="1" min="1" max="3" name="IMAGEM_ORDEM" id="IMAGEM_ORDEM" tabindex="1"  required>                        
-            </div>
-            <div >
-                <input type="file" name="imagem">                   
-            </div>          
-                          
-            <input type="submit" value="Atualizar"> 
-            <a href="../PRODUTOS/listaProdutos.php"><input type="button" value="Voltar"></a>   
-        </form>
     </div>
 
-        </div>
-
 </body>
+<script>
+    // function ativar() {
+    //     let numero = parseInt(document.getElementById("numeral"));
+    //     if (numero == '') {
+    //         window.alert("Dados não inseridos!")
+    //     }
+    // }
+</script>
 
 </html>
