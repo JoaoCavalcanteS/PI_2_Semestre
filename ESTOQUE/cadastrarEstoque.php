@@ -285,51 +285,53 @@
     </header>
     <div class="cadastrar-se">
         <div class="d-grid gap-2 inscreva">
-            <h1> Cadastro de Evento </h1>
-            <form action="CriarProduto.php" method="POST">
+            <h1> Cadastro de Estoque </h1>
+            <form action="InserirEstoque.php" method="POST">
+                <label style="color: #126E82;">Nº do Registro</label>
                 <div class="cadastro">
-                    <input type="text" required name="nome">                    
-                    <label>Nome</label>
-                </div>
-                <div class="cadastro">
-                    <input type="text" required name="preco">
-                    <label>Preço</label>
-                </div>
-                <div class="cadastro">
-                    <input type="text" required name="desc">
-                    <label>Descrição:</label>
-                </div>
-                <div class="cadastro">
-                    <input type="text" required name="descont">
-                    <label>Desconto %:</label>
-                </div>
-                <div>
-                    <div class="selec">                    
+                    <div>                        
+                        <div class="selec">
+                            <select required name="id">
+                                <option selected disabled> Numeração do Evento</option>
+                                <?php
 
-                        <select name="cat" required>
-                            <option selected disabled>Escolha uma categoria</option>
-                            <?php
+                                require_once '../BD/database.php';
 
-                            require_once '../BD/database.php';
+                                $stmt = $pdo->prepare("SELECT * FROM PRODUTO");
+                                $stmt->execute();
 
-                            $stmt = $pdo->prepare("SELECT * FROM CATEGORIA");
-                            $stmt->execute();
-
-                            if ($stmt->rowCount() > 0) {
-                                while ($dados = $stmt->fetch(pdo::FETCH_ASSOC)) {
-                                    echo "<option value='{$dados['CATEGORIA_ID']}'>{$dados['CATEGORIA_NOME']}</option>";
+                                if ($stmt->rowCount() > 0) {
+                                    while ($dados = $stmt->fetch(pdo::FETCH_ASSOC)) {
+                                        echo "<option value='{$dados['PRODUTO_ID']}'>{$dados['PRODUTO_ID']}</option>";
+                                    }
                                 }
-                            }
-                            ?>
-                        </select>
+                                ?>
+                            </select>
 
-                        </div>                  
-            <input type="submit" value="Cadastrar">    
-        </form>
-    </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="cadastro">
+                    <input type="text" required name="qtd">
+                    <label>Quantidade Inicial</label>
+                </div>
+                <label style="color: red ;">*** Caso não saiba a numeração do evento em especifico, vá até a tela de lista de Eventos ***</label>
 
+                <input type="submit" value="Cadastrar" onclick="ativar">
+            </form>
         </div>
 
+    </div>
+
 </body>
+<script>
+    // function ativar() {
+    //     let numero = parseInt(document.getElementById("numeral"));
+    //     if (numero == '') {
+    //         window.alert("Dados não inseridos!")
+    //     }
+    // }
+</script>
 
 </html>

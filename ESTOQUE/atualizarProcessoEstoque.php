@@ -19,7 +19,7 @@
 
     .cadastrar-se {
         position: absolute;
-        top: 60%;
+        top: 70%;
         left: 50%;
         transform: translate(-50%, -50%);
         width: 400px;
@@ -132,7 +132,7 @@
     .logo {
         position: absolute;
         top: -4%;
-        left: 43%;
+        left: 41%;
         max-width: 300px;
         max-height: 300px;
         width: auto;
@@ -158,65 +158,39 @@
         <img src="../Imagens/logoBravo.png" alt="LogoMarca" class="logo">
     </header>
     <div class="cadastrar-se">
-        <h1> Atualizar Evento</h1>
+        <h1> Atualizar ESTOQUE</h1>
         <?php
         require_once '../BD/database.php';
         $id = $_GET["id"];
 
 
-        $admin = $pdo->Query("SELECT * FROM PRODUTO WHERE PRODUTO_ID=" . $id)->fetch();
+        $admin = $pdo->Query("SELECT
+         PE.PRODUTO_ID,
+         PE.PRODUTO_QTD,
+         P.PRODUTO_NOME
+        FROM PRODUTO_ESTOQUE AS PE
+        INNER JOIN PRODUTO AS P ON P.PRODUTO_ID = PE.PRODUTO_ID
+         WHERE PE.PRODUTO_ID=" . $id)->fetch();
 
+        $nomeId = $admin["PRODUTO_ID"];
+        $desc = $admin["PRODUTO_QTD"];
         $nome = $admin["PRODUTO_NOME"];
-        $precoInt = $admin["PRODUTO_PRECO"];
-        $desc = $admin["PRODUTO_DESC"];
-        $descont = $admin["PRODUTO_DESCONTO"];
-        $categoria = $admin["CATEGORIA_ID"];
-
-
-
         ?>
-        <form action="atualizarProdutoProcess.php?id=<?php echo $id ?>" method="POST">
+        <form action="atualizarestoque.php" method="POST">
             <div class="cadastro">
-                <input type="text" name="id" disabled='true' value="<?php echo "ID:".$id; ?> "> 
-            </div>
+                <input type="text" name="nomeId" value="<?php echo $nomeId ?> ">
+                <label>ID</label>
+            </div>            
             <div class="cadastro">
-                <input type="text" name="nome" required value="<?php echo $nome ?> ">
+                <input type="text" value="<?php echo $nome?> ">
                 <label>Nome</label>
             </div>
             <div class="cadastro">
-                <input type="text" name="preco" required value="<?php echo $precoInt ?> ">
-                <label>Preço</label>
+                <input type="text" name="Quantidade" value="<?php echo $desc ?> ">
+                <label>Quantidade</label>
             </div>
-            <div class="cadastro">
-                <input type="text" name="descricao" required value="<?php echo $desc ?> ">
-                <label>Descrição</label>
-            </div>
-            <div class="cadastro">
-                <input type="text" name="desconto" required value="<?php echo $descont ?> ">
-                <label>Desconto</label>
-            </div>
-            <select name="cat" id="CATEGORIA_ID" required>
-                <option>Categoria</option>
-                <?php
-
-                require_once '../BD/database.php';
-
-                $stmt = $pdo->prepare("SELECT * FROM CATEGORIA");
-                $stmt->execute();
-
-                if ($stmt->rowCount() > 0) {
-                    while ($dados = $stmt->fetch(pdo::FETCH_ASSOC)) {
-
-                        $strSelected = $dados['CATEGORIA_ID'] == $categoria ? 'selected' : '';
-
-                        echo "<option value='{$dados['CATEGORIA_ID']}' $strSelected>{$dados['CATEGORIA_NOME']}</option>";
-                    }
-                }
-                ?>
-            </select>
             <input type="submit" value="Atualizar">
-            <a href="../PRODUTOS/listaProdutos.php"><input type="button" value="Voltar"></a>
-        
+            <a href="../ESTOQUE/estoque.php"><input type="button" value="Voltar"></a>
         </form>
     </div>
 </body>

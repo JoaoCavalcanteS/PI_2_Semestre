@@ -161,7 +161,7 @@
         <h1> Atualizar Adm </h1>
         <?php
         require_once '../BD/database.php';
-
+        $id = $_GET["id"];
 
         $admin = $pdo->Query("SELECT * FROM ADMINISTRADOR WHERE ADM_ID=" . $id)->fetch();
 

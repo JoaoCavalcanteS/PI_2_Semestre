@@ -186,6 +186,7 @@
                         <li><a href="../CRUD/login.php">Login</a></li>
                         <li><a href="../CRUD/CadastroAdm.php">Cadastro</a></li>
                         <li><a href="../PRODUTOS/cadastroDeProdutos.php">Cadastro de Eventos</a></li>
+                        <li><a href="../imgProduto/cadastroImagem.php">Cadastro de Imagens</a></li>
                         <li><a href="../CATEGORIAS/cadastrarCategoria.php">Cadastro de Categorias</a></li>
                         <li><a href="../CRUD/listaradmins.php">Lista ADM</a></li>
                         <li><a href="../CATEGORIAS/listaCategoria.php">Categoria</a></li>
@@ -211,21 +212,14 @@
                         <th>Desconto</th>
                         <th>Categoria</th>
                         <th>Cartaz</th>
-                        <th>Atualização</th>
+                        <th>Atualizar-Produto</th>
+                        <th>Atualizar-Imagem</th>
                         <th>Ocultar</th>
                     </tr>
                 </thead>
 
                 <?php
-                $mysqlhostname = "144.22.244.104";
-                $mysqlport = "3306";
-                $mysqlusername = "Bravo4Fun";
-                $mysqlpassword = "Bravo4Fun";
-                $mysqldatabase = "Bravo4Fun";
-
-                //mostra string de conexao ao MySql
-                $dsn = 'mysql:host=' . $mysqlhostname . ";dbname=" . $mysqldatabase . ';port=' . $mysqlport;
-                $pdo = new PDO($dsn, $mysqlusername, $mysqlpassword);
+                require_once '../BD/database.php';
 
                 $cmd = $pdo->query("SELECT P.PRODUTO_ID,
                 P.PRODUTO_NOME,
@@ -235,8 +229,10 @@
                 P.CATEGORIA_ID,
                 IMG.IMAGEM_URL                
                 FROM PRODUTO AS P
-                LEFT JOIN PRODUTO_IMAGEM AS IMG ON IMG.PRODUTO_ID = P.PRODUTO_ID
-                WHERE P.PRODUTO_ATIVO = 1 ORDER BY P.PRODUTO_ID ");
+                LEFT JOIN PRODUTO_IMAGEM AS IMG
+                ON IMG.PRODUTO_ID = P.PRODUTO_ID  
+                WHERE P.PRODUTO_ATIVO = 1
+                ORDER BY P.PRODUTO_ID");
 
 
                 $produto = $cmd->fetch(PDO::FETCH_NUM);
@@ -281,6 +277,9 @@
                         </td>
                         <td>
                             <a href="atualizarPRODUTO.php?id=<?php echo $linha["PRODUTO_ID"] ?>">Atualizar</a>
+                        </td>
+                        <td>
+                            <a href="atualizarImagem.php?id=<?php echo $linha["PRODUTO_ID"] ?>">Atualizar</a> 
                         </td>
                         <td>
                             <a href="ExcluirProdutos.php?id=<?php echo $linha["PRODUTO_ID"] ?>">Ocultar</a>

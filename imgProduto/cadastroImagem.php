@@ -272,12 +272,11 @@
                         <li><a href="../CRUD/login.php">Login</a></li>
                         <li><a href="../CRUD/CadastroAdm.php">Cadastro</a></li>
                         <li><a href="../PRODUTOS/cadastroDeProdutos.php">Cadastro de Eventos</a></li>
-                        <li><a href="../imgProduto/cadastroImagem.php">Cadastro de Imagens</a></li>
+                        <li><a href="../imgProduto/cadastroImagem.php">Cadastro de Cartaz</a></li>
                         <li><a href="../CATEGORIAS/cadastrarCategoria.php">Cadastro de Categorias</a></li>
                         <li><a href="../CRUD/listaradmins.php">Lista ADM</a></li>
                         <li><a href="../CATEGORIAS/listaCategoria.php">Categoria</a></li>
                         <li><a href="../PRODUTOS/listaProdutos.php">Eventos</a></li>
-                        <li><a href="../ESTOQUE/cadastrarEstoque.php">Cadastro de Estoque</a></li>
                         <li><a href="../ESTOQUE/estoque.php">Estoque</a></li>
                     </ul>
                 </div>
@@ -285,45 +284,31 @@
     </header>
     <div class="cadastrar-se">
         <div class="d-grid gap-2 inscreva">
-            <h1> Cadastro de Evento </h1>
-            <form action="CriarProduto.php" method="POST">
-                <div class="cadastro">
-                    <input type="text" required name="nome">                    
-                    <label>Nome</label>
-                </div>
-                <div class="cadastro">
-                    <input type="text" required name="preco">
-                    <label>Preço</label>
-                </div>
-                <div class="cadastro">
-                    <input type="text" required name="desc">
-                    <label>Descrição:</label>
-                </div>
-                <div class="cadastro">
-                    <input type="text" required name="descont">
-                    <label>Desconto %:</label>
-                </div>
-                <div>
-                    <div class="selec">                    
+            <h1> Cadastro de Cartaz </h1>
+            <form action="uploud.php" method="POST" enctype="multipart/form-data">
 
-                        <select name="cat" required>
-                            <option selected disabled>Escolha uma categoria</option>
+                        <select name="PRODUTO_ID" required>
+                            <option selected disabled>Escolha um filme</option>
                             <?php
 
                             require_once '../BD/database.php';
 
-                            $stmt = $pdo->prepare("SELECT * FROM CATEGORIA");
+                            $stmt = $pdo->prepare("SELECT * FROM PRODUTO WHERE PRODUTO_ATIVO=1");
                             $stmt->execute();
 
                             if ($stmt->rowCount() > 0) {
                                 while ($dados = $stmt->fetch(pdo::FETCH_ASSOC)) {
-                                    echo "<option value='{$dados['CATEGORIA_ID']}'>{$dados['CATEGORIA_NOME']}</option>";
+                                    echo "<option value='{$dados['PRODUTO_ID']}'>{$dados['PRODUTO_NOME']}</option>";
                                 }
                             }
                             ?>
                         </select>
-
-                        </div>                  
+                        <span >
+                            <input placeholder="Ordem da imagem" type="number" step="1" min="1" max="3" name="IMAGEM_ORDEM" id="IMAGEM_ORDEM" tabindex="1"  required> 
+                        </span> 
+                        Selecione a imagem : 
+                        <input type="file" name="imagem" required>
+                          
             <input type="submit" value="Cadastrar">    
         </form>
     </div>
