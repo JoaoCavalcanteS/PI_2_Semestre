@@ -258,7 +258,7 @@
         <span>Link para o formulário de cadastro de categoria.</span>
       </a>
 
-      <a href="" class="card">
+      <a href="../ESTOQUE/cadastrarEstoque.php" class="card">
         <div class="icon">
           <img src="estoque.png" />
         </div>

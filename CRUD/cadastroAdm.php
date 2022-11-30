@@ -206,6 +206,8 @@
                         <li><a href="../CATEGORIAS/listaCategoria.php">Categoria</a></li>
                         <li><a href="../PRODUTOS/listaProdutos.php">Eventos</a></li>
                         <li><a href="../ESTOQUE/estoque.php">Estoque</a></li>
+                        <li><a href="../ESTOQUE/cadastrarestoque.php">Cadastrar Estoque</a></li>
+
                     </ul>
                 </div>
             </nav>

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -9,6 +8,9 @@
     <!-- <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet"> -->
     <link rel="icon" type="image/x-icon" href="../imagens/logoBravo.png">
     <title>Bravo4Fun</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <style>
     * {
@@ -22,7 +24,7 @@
         margin: 0;
         padding: 0;
         font-family: system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
-        background: #000000;
+        background: black;
         overflow: hidden;
     }
 
@@ -100,7 +102,7 @@
         width: 100%;
     }
 
-    input[type="submit"], input[type="button"] {
+    input[type="submit"] {
         width: 100%;
         height: 50px;
         border: 1px solid;
@@ -114,21 +116,43 @@
         margin: 25px 0;
     }
 
-    input[type="submit"], input[type="button"]:hover {
+    input[type="submit"]:hover {
         border-color: #126E82;
         transition: .5s;
     }
 
+    a input[type="button"] {
+        width: 100%;
+        height: 50px;
+        border: 1px solid;
+        background: red;
+        border-radius: 25px;
+        font-size: 18px;
+        color: white;
+        font-weight: 700;
+        cursor: pointer;
+        outline: none;
+        margin: 25px 0;
+    }
+
+    a input[type="button"]:hover {
+        border-color: #126E82;
+        transition: .5s;
+    }
+
+
     .menu {
         background: black;
-        position: absolute;
-        top: 0%;
+        position: fixed;
         width: 100%;
         box-shadow: 0 0 2rem red;
         border: 1px solid red;
         border-bottom: 10px solid red;
     }
 
+    .menu .icone-pesquisa {
+        color: white;
+    }
 
     .menu nav {
         position: relative;
@@ -162,14 +186,11 @@
     }
 
     .conteudo .links li a {
-        position: relative;
-        top: 0px;
         color: white;
         font-size: 18px;
         font-weight: 500;
         padding: 7px 17px;
         border-radius: 5px;
-        text-decoration: none;
     }
 
     .conteudo .links li:hover a {
@@ -177,17 +198,67 @@
         transition: .3s;
     }
 
-    ::-webkit-scrollbar {
-        height: 5px;
-        width: 5px;
+    .menu .barra-pesquisa {
+        position: absolute;
+        height: 100%;
+        max-width: calc(100% - 50px);
+        width: 100%;
+        display: none;
     }
 
-    ::-webkit-scrollbar-track {
-        box-shadow: inset 0 0 6px red;
+    .barra-pesquisa input {
+        width: 100%;
+        height: 100%;
+        border: none;
+        outline: none;
+        font-size: 17px;
+        background: black;
     }
 
-    ::-webkit-scrollbar-thumb {
-        box-shadow: inset 0 0 6px red;
+    .barra-pesquisa input::placeholder {
+        color: white;
+    }
+
+    select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        outline: 0;
+        box-shadow: none;
+        border: 1px solid red;
+        background: black;
+        color: #126E82;
+    }
+
+    select::-ms-expand {
+        display: none;
+    }
+
+    .select {
+        position: relative;
+        display: flex;
+        width: 20em;
+        height: 3em;
+        background: black;
+        line-height: 3;
+
+    }
+
+    select {
+        flex: 1;
+        padding: 0 .5em;
+        color: #126E82;
+        cursor: pointer;
+    }
+
+    .select::after {
+        content: \25BC;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 0 1em;
+        background: red;
+        cursor: pointer;
     }
 </style>
 
@@ -206,31 +277,61 @@
                         <li><a href="../CRUD/listaradmins.php">Lista ADM</a></li>
                         <li><a href="../CATEGORIAS/listaCategoria.php">Categoria</a></li>
                         <li><a href="../PRODUTOS/listaProdutos.php">Eventos</a></li>
+                        <li><a href="../ESTOQUE/cadastrarEstoque.php">Cadastro de Estoque</a></li>
                         <li><a href="../ESTOQUE/estoque.php">Estoque</a></li>
-                        <li><a href="../ESTOQUE/cadastrarestoque.php">Cadastrar Estoque</a></li>
-
                     </ul>
                 </div>
             </nav>
     </header>
     <div class="cadastrar-se">
-        <h1> Cadastro de Categorias</h1>
-        <form action="processamentoCategoria.php" method="post">
-        <div class="cadastro">
-                <input type="text" name="categoria">
-                <span></span>
-                <label>Nome</label>
-            </div>
-            <div class="cadastro">
-                <input type="text" name="desc">
-                <span></span>
-                <label>Descrição</label>
-            </div>
-            <input type="submit" value="Cadastrar">
-            <!-- <button type="submit" value="Enviar" class="btn btn-outline-danger">Cadastrar</button> -->
-            <a href="listaCategoria.php"><input type="button" value="Voltar"></a>
-        </form>
-    </div>    
+        <div class="d-grid gap-2 inscreva">
+            <h1> Cadastro de Estoque </h1>
+            <form action="InserirEstoque.php" method="POST">
+                <label style="color: #126E82;">Nº do Registro</label>
+                <div class="cadastro">
+                    <div>                        
+                        <div class="selec">
+                            <select required name="id">
+                                <option selected disabled> Numeração do Evento</option>
+                                <?php
+
+                                require_once '../BD/database.php';
+
+                                $stmt = $pdo->prepare("SELECT * FROM PRODUTO");
+                                $stmt->execute();
+
+                                if ($stmt->rowCount() > 0) {
+                                    while ($dados = $stmt->fetch(pdo::FETCH_ASSOC)) {
+                                        echo "<option value='{$dados['PRODUTO_ID']}'>{$dados['PRODUTO_ID']}</option>";
+                                    }
+                                }
+                                ?>
+                            </select>
+
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="cadastro">
+                    <input type="text" required name="qtd">
+                    <label>Quantidade Inicial</label>
+                </div>
+                <label style="color: red ;">*** Caso não saiba a numeração do evento em especifico, vá até a tela de lista de Eventos ***</label>
+
+                <input type="submit" value="Cadastrar" onclick="ativar">
+            </form>
+        </div>
+
+    </div>
+
 </body>
+<script>
+    // function ativar() {
+    //     let numero = parseInt(document.getElementById("numeral"));
+    //     if (numero == '') {
+    //         window.alert("Dados não inseridos!")
+    //     }
+    // }
+</script>
 
 </html>
