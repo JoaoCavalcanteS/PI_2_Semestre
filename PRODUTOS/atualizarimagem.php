@@ -316,10 +316,11 @@ $id = $_GET["id"];
 
                 $cmd = $pdo->query("SELECT 
                 P.PRODUTO_ID,
-                IMG.IMAGEM_URL                
+                IMG.IMAGEM_URL,
+                IMG.IMAGEM_ID                
                 FROM PRODUTO AS P 
                 LEFT JOIN PRODUTO_IMAGEM AS IMG ON IMG.PRODUTO_ID = P.PRODUTO_ID 
-                WHERE IMG.IMAGEM_ORDEM=1 AND P.PRODUTO_ID=".$id);
+                WHERE IMG.IMAGEM_ORDEM=1 AND Img.produto_id=".$id);
               
 
                 while ($linha = $cmd->fetch()) {
