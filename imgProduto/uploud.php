@@ -5,7 +5,7 @@
         </title>
     </Head>
     <Body>
-        <h1>Veja a imagem</h1>
+        
     <?php 
 
 require_once '../BD/database.php';
@@ -95,10 +95,10 @@ $IMGUR_CLIENT_ID = "52ff310ba217f07";
         $status = $cmd->execute();
         // $responseArr->data->link retorna o Link da imagem
         // Exibe a imagem
-        echo '<img src="' . $responseArr->data->link . '"</>';
-        // Link para ir para o IMGUR
-        echo "<br>";
-        echo '<a href="' . $responseArr->data->link . '">Link para a imagem</a>';
+        // echo '<img src="' . $responseArr->data->link . '"</>';
+        // // Link para ir para o IMGUR
+        // echo "<br>";
+        // echo '<a href="' . $responseArr->data->link . '">Link para a imagem</a>';
     }else{ 
         // Caso tenha algum erro         
         echo 'ERRO: Imagem não foi inserida'; 

@@ -301,7 +301,7 @@ $id = $_GET["id"];
     </header>
 
     <div class="cadastrar-se">
-    <form action="atualizarProdutoProcess.php?id=<?php echo $id ?>" method="POST" enctype="multipart/form-data">
+    <form action="../imgProduto/atualizarImagemProduto.php?id=<?php echo $id ?>" method="POST" enctype="multipart/form-data">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -311,22 +311,23 @@ $id = $_GET["id"];
         <div class="carousel-inner">
             <div class="carousel-item active">
             <img class="d-block w-100" src="<?php 
-                  require_once '../BD/database.php';
-                  $id = $_GET["id"];
-  
-                  $cmd = $pdo->query("SELECT 
-                  P.PRODUTO_ID,
-                  IMG.IMAGEM_URL                
-                  FROM PRODUTO AS P 
-                  LEFT JOIN PRODUTO_IMAGEM AS IMG ON IMG.PRODUTO_ID = P.PRODUTO_ID AND IMG.IMAGEM_ORDEM=1
-                  WHERE P.PRODUTO_ATIVO = 1 AND P.PRODUTO_ID=.$id
-                  ORDER BY ");
-                  
-                  while ($linha = $cmd->fetch()) {
-                      ?>
-                      <?php
-                          echo $linha["IMAGEM_URL"];
-                  }
+                require_once '../BD/database.php';
+                $id = $_GET["id"];
+
+                $cmd = $pdo->query("SELECT 
+                P.PRODUTO_ID,
+                IMG.IMAGEM_URL                
+                FROM PRODUTO AS P 
+                LEFT JOIN PRODUTO_IMAGEM AS IMG ON IMG.PRODUTO_ID = P.PRODUTO_ID 
+                WHERE IMG.IMAGEM_ORDEM=1 AND P.PRODUTO_ID=".$id);
+              
+
+                while ($linha = $cmd->fetch()) {
+                    ?>
+                    <?php
+                        echo $linha["IMAGEM_URL"];
+                        
+                }
             ?>"alt="Primeiro Slide">
             </div>
             <div class="carousel-item">
@@ -338,13 +339,14 @@ $id = $_GET["id"];
                   P.PRODUTO_ID,
                   IMG.IMAGEM_URL                
                   FROM PRODUTO AS P 
-                  LEFT JOIN PRODUTO_IMAGEM AS IMG ON IMG.PRODUTO_ID = P.PRODUTO_ID AND IMG.IMAGEM_ORDEM=2
-                  WHERE P.PRODUTO_ATIVO = 1 AND P.PRODUTO_ID=.$id");
+                  LEFT JOIN PRODUTO_IMAGEM AS IMG ON IMG.PRODUTO_ID = P.PRODUTO_ID
+                  WHERE IMG.IMAGEM_ORDEM=2 AND P.PRODUTO_ID=".$id);
                   
                   while ($linha = $cmd->fetch()) {
                       ?>
                       <?php
                           echo $linha["IMAGEM_URL"];
+                        
                   }
             ?>" alt="Segundo Slide">
             </div>
@@ -357,8 +359,8 @@ $id = $_GET["id"];
                   P.PRODUTO_ID,
                   IMG.IMAGEM_URL                
                   FROM PRODUTO AS P 
-                  LEFT JOIN PRODUTO_IMAGEM AS IMG ON IMG.PRODUTO_ID = P.PRODUTO_ID AND IMG.IMAGEM_ORDEM=3
-                  WHERE P.PRODUTO_ATIVO = 1 AND P.PRODUTO_ID=.$id");
+                  LEFT JOIN PRODUTO_IMAGEM AS IMG ON IMG.PRODUTO_ID = P.PRODUTO_ID 
+                  WHERE IMG.IMAGEM_ORDEM=3 AND P.PRODUTO_ID=".$id);
                   
                   while ($linha = $cmd->fetch()) {
                       ?>
@@ -380,7 +382,7 @@ $id = $_GET["id"];
 
         <div class="d-grid gap-2 inscreva">
             <h1> Atualizar Imagens <?php echo "ID:".$id; ?> </h1>
-            
+            <input type="hidden" value="<?php echo $_GET["id"]?>" name="id">
             <div class="cadastro">
                 <input placeholder="Ordem da imagem" type="number" step="1" min="1" max="3" name="IMAGEM_ORDEM" id="IMAGEM_ORDEM" tabindex="1"  required>                        
             </div>

@@ -227,10 +227,11 @@
                 P.PRODUTO_PRECO,
                 P.PRODUTO_DESCONTO,
                 P.CATEGORIA_ID,
+                IMG.IMAGEM_ORDEM,
                 IMG.IMAGEM_URL                
                 FROM PRODUTO AS P
                 LEFT JOIN PRODUTO_IMAGEM AS IMG
-                ON IMG.PRODUTO_ID = P.PRODUTO_ID  
+                ON IMG.PRODUTO_ID = P.PRODUTO_ID  and  IMG.IMAGEM_ORDEM=1
                 WHERE P.PRODUTO_ATIVO = 1
                 ORDER BY P.PRODUTO_ID");
 
