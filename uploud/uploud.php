@@ -5,16 +5,12 @@
         </title>
     </Head>
     <Body>
-        <h1></h1>
+        <h1>Veja a imagem</h1>
     <?php 
-
-require_once '../BD/database.php';
-
-$ordem = $_POST['IMAGEM_ORDEM'];            
-$produto = $_POST['PRODUTO_ID'];
+//
 // Coloque aqui a chave do Serviço
 //
-$IMGUR_CLIENT_ID = "dcf11510f401f3a";
+$IMGUR_CLIENT_ID = "";
   
 //
 // Se nao nenhum arquivo for selecionado, entao informa que precisa selecionar um 
@@ -87,16 +83,13 @@ $IMGUR_CLIENT_ID = "dcf11510f401f3a";
     //
     if(!empty($responseArr->data->link)){ 
         //AQUI VOCE VAI INSERRIR NO BANCO O LINK ABAIXO
-        $cmdtext = "INSERT INTO PRODUTO_IMAGEM(IMAGEM_ORDEM, PRODUTO_ID, IMAGEM_URL ) VALUES(" . $ordem . "," . $produto . ",'" .  $responseArr->data->link . "')";
-        
-        $cmd = $pdo->prepare($cmdtext);
-        $status = $cmd->execute();
-        // // $responseArr->data->link retorna o Link da imagem
-        // // Exibe a imagem
-        // echo '<img src="' . $responseArr->data->link . '"</>';
-        // // Link para ir para o IMGUR
-        // echo "<br>";
-        // echo '<a href="' . $responseArr->data->link . '">Link para a imagem</a>';
+
+        // $responseArr->data->link retorna o Link da imagem
+        // Exibe a imagem
+        echo '<img src="' . $responseArr->data->link . '"</>';
+        // Link para ir para o IMGUR
+        echo "<br>";
+        echo '<a href="' . $responseArr->data->link . '">Link para a imagem</a>';
     }else{ 
         // Caso tenha algum erro         
         echo 'ERRO: Imagem não foi inserida'; 
@@ -120,11 +113,8 @@ $IMGUR_CLIENT_ID = "dcf11510f401f3a";
         </script>
 
         <p>
-
         <input type="button" onclick="exibirJson()" value="Clique para exibir o json">
-        <a href="../PRODUTOS/listaProdutos.php">Voltar para a lista de produtos</a>
 
         <pre id="json"></pre>
-
     </Body>
-</Html>  
+</Html>       

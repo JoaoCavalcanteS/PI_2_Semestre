@@ -277,6 +277,7 @@
                         <li><a href="../CRUD/listaradmins.php">Lista ADM</a></li>
                         <li><a href="../CATEGORIAS/listaCategoria.php">Categoria</a></li>
                         <li><a href="../PRODUTOS/listaProdutos.php">Eventos</a></li>
+                        <li><a href="../ESTOQUE/cadastrarEstoque.php">Cadastro de Estoque</a></li>
                         <li><a href="../ESTOQUE/estoque.php">Estoque</a></li>
                         <li><a href="../ESTOQUE/cadastrarestoque.php">Cadastrar Estoque</a></li>
 
