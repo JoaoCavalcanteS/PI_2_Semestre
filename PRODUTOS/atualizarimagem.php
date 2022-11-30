@@ -289,6 +289,7 @@ $id = $_GET["id"];
                         <li><a href="../CRUD/login.php">Login</a></li>
                         <li><a href="../CRUD/CadastroAdm.php">Cadastro</a></li>
                         <li><a href="../PRODUTOS/cadastroDeProdutos.php">Cadastro de Eventos</a></li>
+                        <li><a href="../ESTOQUE/cadastrarEstoque.php">Cadastro de Estoque</a></li>
                         <li><a href="../imgProduto/cadastroImagem.php">Cadastro de Imagens</a></li>
                         <li><a href="../CATEGORIAS/cadastrarCategoria.php">Cadastro de Categorias</a></li>
                         <li><a href="../CRUD/listaradmins.php">Lista ADM</a></li>
@@ -301,7 +302,7 @@ $id = $_GET["id"];
     </header>
 
     <div class="cadastrar-se">
-    <form action="atualizarProdutoProcess.php?id=<?php echo $id ?>" method="POST" enctype="multipart/form-data">
+    <form action="../imgProduto/atualizarImagens.php?id=<?php echo $id ?>" method="POST" enctype="multipart/form-data">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -316,11 +317,12 @@ $id = $_GET["id"];
   
                   $cmd = $pdo->query("SELECT 
                   P.PRODUTO_ID,
-                  IMG.IMAGEM_URL                
+                  IMG.IMAGEM_URL,
+                  IMG.PRODUTO_ID                
                   FROM PRODUTO AS P 
                   LEFT JOIN PRODUTO_IMAGEM AS IMG ON IMG.PRODUTO_ID = P.PRODUTO_ID AND IMG.IMAGEM_ORDEM=1
-                  WHERE P.PRODUTO_ATIVO = 1 AND P.PRODUTO_ID=.$id
-                  ORDER BY ");
+                 
+                  ORDER BY IMG.IMAGEM_ID");
                   
                   while ($linha = $cmd->fetch()) {
                       ?>
@@ -339,7 +341,7 @@ $id = $_GET["id"];
                   IMG.IMAGEM_URL                
                   FROM PRODUTO AS P 
                   LEFT JOIN PRODUTO_IMAGEM AS IMG ON IMG.PRODUTO_ID = P.PRODUTO_ID AND IMG.IMAGEM_ORDEM=2
-                  WHERE P.PRODUTO_ATIVO = 1 AND P.PRODUTO_ID=.$id");
+                  ORDER BY IMG.IMAGEM_ID");
                   
                   while ($linha = $cmd->fetch()) {
                       ?>
@@ -358,7 +360,7 @@ $id = $_GET["id"];
                   IMG.IMAGEM_URL                
                   FROM PRODUTO AS P 
                   LEFT JOIN PRODUTO_IMAGEM AS IMG ON IMG.PRODUTO_ID = P.PRODUTO_ID AND IMG.IMAGEM_ORDEM=3
-                  WHERE P.PRODUTO_ATIVO = 1 AND P.PRODUTO_ID=.$id");
+                   ORDER BY IMG.IMAGEM_ID");
                   
                   while ($linha = $cmd->fetch()) {
                       ?>
@@ -380,7 +382,7 @@ $id = $_GET["id"];
 
         <div class="d-grid gap-2 inscreva">
             <h1> Atualizar Imagens <?php echo "ID:".$id; ?> </h1>
-            
+            <input type="hidden" class="form-control" name="PRODUTO_ID" value="<?php echo $id ?>">
             <div class="cadastro">
                 <input placeholder="Ordem da imagem" type="number" step="1" min="1" max="3" name="IMAGEM_ORDEM" id="IMAGEM_ORDEM" tabindex="1"  required>                        
             </div>

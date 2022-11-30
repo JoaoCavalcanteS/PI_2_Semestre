@@ -5,7 +5,7 @@
         </title>
     </Head>
     <Body>
-        <h1>Veja a imagem</h1>
+        <h1></h1>
     <?php 
 
 require_once '../BD/database.php';
@@ -14,9 +14,7 @@ $ordem = $_POST['IMAGEM_ORDEM'];
 $produto = $_POST['PRODUTO_ID'];
 // Coloque aqui a chave do Serviço
 //
-$IMGUR_CLIENT_ID = "52ff310ba217f07";
-//Client secret::db6c06999faec9d3ec0a0a6f2ac986d1be2fdb75
-//52ff310ba217f07
+$IMGUR_CLIENT_ID = "dcf11510f401f3a";
   
 //
 // Se nao nenhum arquivo for selecionado, entao informa que precisa selecionar um 
@@ -93,12 +91,12 @@ $IMGUR_CLIENT_ID = "52ff310ba217f07";
         
         $cmd = $pdo->prepare($cmdtext);
         $status = $cmd->execute();
-        // $responseArr->data->link retorna o Link da imagem
-        // Exibe a imagem
-        echo '<img src="' . $responseArr->data->link . '"</>';
-        // Link para ir para o IMGUR
-        echo "<br>";
-        echo '<a href="' . $responseArr->data->link . '">Link para a imagem</a>';
+        // // $responseArr->data->link retorna o Link da imagem
+        // // Exibe a imagem
+        // echo '<img src="' . $responseArr->data->link . '"</>';
+        // // Link para ir para o IMGUR
+        // echo "<br>";
+        // echo '<a href="' . $responseArr->data->link . '">Link para a imagem</a>';
     }else{ 
         // Caso tenha algum erro         
         echo 'ERRO: Imagem não foi inserida'; 
@@ -129,4 +127,4 @@ $IMGUR_CLIENT_ID = "52ff310ba217f07";
         <pre id="json"></pre>
 
     </Body>
-</Html>       
+</Html>  
